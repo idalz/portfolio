@@ -498,10 +498,12 @@ body.light-mode #themeToggle svg {
 }
 
 #themeToggle:hover svg {
+  filter: drop-shadow(0 0 6px #1fa9c6);
   color: #1fa9c6;
 }
 
 body.light-mode #themeToggle:hover svg {
+  filter: drop-shadow(0 0 6px #1fa9c6);
   color: #1fa9c6;
 }
 
