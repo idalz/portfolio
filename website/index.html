@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- 🧠 Basic Page Info -->
+  <meta charset="utf-8"/>
+  <title>
+   Yannis | Portfolio
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <!-- 🔍 SEO Meta Tags -->
+  <meta content="Yannis is an aspiring Machine Learning Engineer with a passion for AI, data science, and software development. Explore his portfolio and projects." name="description"/>
+  <meta content="Yannis, Machine Learning, AI, Data Science, Portfolio, FastAPI, Python, React, LLM, Projects" name="keywords"/>
+  <meta content="Yannis" name="author"/>
+  <!-- 📣 Open Graph Meta (for LinkedIn, Facebook, etc.) -->
+  <meta content="website" property="og:type"/>
+  <meta content="Yannis | Machine Learning Portfolio" property="og:title"/>
+  <meta content="Explore Yannis' AI and machine learning projects, built with FastAPI, React, and more." property="og:description"/>
+  <meta content="https://yourdomain.com/preview.jpg" property="og:image"/>
+  <!-- 🔁 Replace with your actual preview image -->
+  <meta content="https://yourdomain.com" property="og:url"/>
+  <!-- 🔁 Replace with your actual domain -->
+  <!-- 🐦 Twitter Card Meta -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Yannis | Machine Learning Portfolio" name="twitter:title"/>
+  <meta content="Explore Yannis' projects in AI, ML, and software engineering." name="twitter:description"/>
+  <meta content="https://yourdomain.com/preview.jpg" name="twitter:image"/>
+  <!-- 🔁 Replace with your actual preview image -->
+  <!-- 🧿 Favicons -->
+  <link href="icons/logo.png" rel="icon" type="image/png"/>
+  <link href="icons/favicon.ico" rel="icon" type="image/x-icon"/>
+  <!-- 🎨 Stylesheets -->
+  <link href="css/styles.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  </link>
+ </head>
+ <body>
+  <!-- ⏳ Page Loader -->
+  <div id="loader">
+   <div class="spinner">
+   </div>
+  </div>
+  <!-- ✅ Sticky Navbar -->
+  <nav class="navbar">
+   <div class="nav-left">
+    <img alt="Logo" class="nav-icon" src="icons/logo.png"/>
+    <span class="brand-name">
+     Yannis
+    </span>
+   </div>
+   <div class="nav-right-wrapper">
+    <ul class="nav-right">
+     <li>
+      <a href="#hero">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="#skills">
+       Skills
+      </a>
+     </li>
+     <li>
+      <a href="#projects">
+       Projects
+      </a>
+     </li>
+     <li>
+      <a href="#contact">
+       Contact
+      </a>
+     </li>
+    </ul>
+    <div class="theme-toggle">
+     <button id="themeToggle">
+      <svg class="lucide lucide-moon-icon lucide-moon" fill="none" height="24" id="themeIcon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z">
+       </path>
+      </svg>
+     </button>
+    </div>
+   </div>
+  </nav>
+  <!-- 🌟 Main Content -->
+  <main>
+   <!-- 🧍 Hero Section -->
+<section class="hero fade-in-section hidden" id="hero">
+  <img alt="Yannis Profile" class="profile-pic" src="projects/pics/profile.png" />
+  <div style="text-align: center;"><h1 class="fade-in-heading">Yannis</h1></div>
+  <p class="title">Aspiring Machine Learning Engineer</p>
+  <p class="mission">Driven by curiosity. Focused on growth. Dreaming of thriving in Japan.</p>
+</section>
+
+   <!-- 🛠️ Skills Section -->
+<section class="skills zoom-in hidden" id="skills">
+  <div style="text-align: center;"><h1 class="fade-in-heading">My Core Tools</h1></div>
+
+  <!-- Languages & Frameworks -->
+  <div style="text-align: center;"><h2 class="fade-in-heading">Languages &amp; Frameworks</h2></div>
+  <div class="skills-grid">
+    <div class="skill"><img alt="Python" src="icons/Python.svg" style="height:40px;" /><span>Python</span></div>
+    <div class="skill"><img alt="JavaScript" src="icons/JavaScript.svg" style="height:40px;" /><span>JavaScript</span></div>
+    <div class="skill"><img alt="HTML" src="icons/HTML.svg" style="height:40px;" /><span>HTML</span></div>
+    <div class="skill"><img alt="CSS" src="icons/CSS.svg" style="height:40px;" /><span>CSS</span></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill"><img alt="FastAPI" src="icons/FastAPI.svg" style="height:40px;" /><span>FastAPI</span></div>
+    <div class="skill"><img alt="Streamlit" src="icons/Streamlit.svg" style="height:40px;" /><span>Streamlit</span></div>
+    <div class="skill"><img alt="LangChain" src="icons/LangChain.svg" style="height:40px;" /><span>LangChain</span></div>
+    <div class="skill"><img alt="OpenAI" src="icons/OpenAI.svg" style="height:40px;" /><span>OpenAI API</span></div>
+    <div class="skill"><img alt="PyTorch" src="icons/PyTorch.svg" style="height:40px;" /><span>PyTorch</span></div>
+    <div class="skill"><img alt="Pandas" src="icons/Pandas.svg" style="height:40px;" /><span>Pandas</span></div>
+    <div class="skill"><img alt="NumPy" src="icons/NumPy.svg" style="height:40px;" /><span>NumPy</span></div>
+    <div class="skill"><img alt="scikit-learn" src="icons/Scikit-Learn.svg" style="height:40px;" /><span>scikit-learn</span></div>
+  </div>
+
+  <!-- Databases & Infrastructure -->
+  <div style="text-align: center;"><h2 class="fade-in-heading">Databases &amp; Infrastructure</h2></div>
+  <div class="skills-grid">
+    <div class="skill"><img alt="PostgreSQL" src="icons/PostgreSQL.svg" style="height:40px;" /><span>PostgreSQL</span></div>
+    <div class="skill"><img alt="Redis" src="icons/Redis.svg" style="height:40px;" /><span>Redis</span></div>
+    <div class="skill"><img alt="Pinecone" src="icons/Pinecone.svg" style="height:40px; width:100px;" /><span>Pinecone</span></div>
+  </div>
+
+  <!-- Tools & Technologies -->
+  <div style="text-align: center;"><h2 class="fade-in-heading">Tools &amp; Technologies</h2></div>
+  <div class="skills-grid">
+    <div class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+    <div class="skill"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+    <div class="skill"><i class="devicon-jupyter-plain colored"></i><span>Jupyter</span></div>
+  </div>
+</section>
+
+   <!-- 🗂️ Projects Section -->
+   <section id="projects">
+    <div style="text-align: center;">
+     <h1 class="fade-in-heading">
+      My projects
+     </h1>
+    </div>
+    <!-- 🔘 Filter Buttons -->
+    <div class="filters">
+     <button class="active" data-filter="all">All</button>
+     <button data-filter="ai">AI &amp; LLM</button>
+     <button data-filter="software">Software Engineering</button>
+     <button data-filter="dl">Deep Learning</button>
+     <button data-filter="ml">Machine Learning </button>
+     <button data-filter="data">Data Science &amp; Analytics</button>
+    </div>
+    <!-- AI & LLM -->
+<section class="category slide-up hidden stagger" data-category="ai">
+  <div style="text-align: center;"><h2 class="fade-in-heading">AI &amp; LLM</h2></div>
+  <div class="project-list centered">
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>AI-Powered Job Application Assistant</h3>
+        <p>An AI-driven assistant built with Langchain, OpenAI, Pinecone, FastAPI, PostgreSQL and Streamlit. Users can create profiles, extract key details from job descriptions and resumes, evaluate their compatibility with specific jobs, and generate personalized cover letters. Recruiters can find ideal candidates in a single click using the power of RAG.</p>
+        <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span><span>FastAPI</span><span>PostgreSQL</span><span>Streamlit</span><span>Docker</span></div>
+      </div>
+      <div class="project-image"><img alt="AI-Powered Job Application Assistant" src="https://via.placeholder.com/250x150.png?text=AI+Job+Assistant"/></div>
+    </div>
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>Multi-Source RAG App</h3>
+        <p>An intelligent question-answering app using LangChain agents with OpenAI, Pinecone, and Streamlit. Users can upload their own documents (PDF) and ask any question. The agent provides an answer based on the document or falls back to Arxiv and Wikipedia.</p>
+        <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span><span>Streamlit</span><span>RAG</span><span>Docker</span></div>
+      </div>
+      <div class="project-image"><img alt="Multi-Source RAG App" src="https://via.placeholder.com/250x150.png?text=Multi-Source+RAG+App"/></div>
+    </div>
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>AI Chatbot with Memory</h3>
+        <p>A full-stack application built with FastAPI, OpenAI, LangChain and FAISS. Each user has a unique session ID, enabling personalized and memory-aware conversations that persist across messages during the session.</p>
+        <div class="project-tech"><span>FastAPI</span><span>OpenAI</span><span>LangChain</span><span>FAISS</span><span>JavaScript</span><span>Docker</span></div>
+      </div>
+      <div class="project-image"><img alt="AI Chatbot with Memory" src="https://via.placeholder.com/250x150.png?text=AI+Chatbot+with+Memory"/></div>
+    </div>
+  </div>
+</section>
+    <!-- Software Engineering -->
+<section class="category slide-up hidden stagger-2" data-category="software">
+  <div style="text-align: center;"><h2 class="fade-in-heading">Software Engineering</h2></div>
+  <div class="project-list centered ">
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>Task Manager Web App</h3>
+        <p>A full-stack task manager app with FastAPI, PostgreSQL and JWT-based user authentication. Users can create their account and safely manage their tasks. Includes CRUD operations, task filtering, sorting and searching.</p>
+        <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>JWT</span><span>Alembic</span><span>Docker</span></div>
+      </div>
+      <div class="project-image"><img alt="Task Manager Web App" src="https://via.placeholder.com/250x150.png?text=Task+Manager+Web+App"/></div>
+    </div>
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>Real-Time Chat App</h3>
+        <p>A real-time chat platform using FastAPI, PostgreSQL, JWT-based user authentication, WebSockets, and Redis for pub/sub messaging. Users can create their account and join public rooms or send DMs to others in real time.</p>
+        <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>JWT</span><span>WebSockets</span><span>Redis</span><span>Alembic</span><span>Docker</span></div>
+      </div>
+      <div class="project-image"><img alt="Real-Time Chat App" src="https://via.placeholder.com/250x150.png?text=Real-Time+Chat+App"/></div>
+    </div>
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>Job Board App</h3>
+        <p>A full-stack job board aggregator with FastAPI, PostgreSQL and BeautifulSoup. Users can search dev jobs by tags and keywords (scraped from different sources). Includes token-based access for admin to manage or scrape jobs.</p>
+        <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>BeautifulSoup</span><span>Docker</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+      </div>
+      <div class="project-image"><img alt="Job Board App" src="https://via.placeholder.com/250x150.png?text=Job+Board+App"/></div>
+    </div>
+  </div>
+</section>
+
+    <!-- Deep Learning -->
+<section class="category slide-up hidden stagger-3" data-category="dl">
+  <div style="text-align: center;"><h2 class="fade-in-heading">Deep Learning</h2></div>
+  <div class="project-list centered">
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>Car Price Prediction</h3>
+        <p>An end-to-end car price prediction system using a neural network in PyTorch and Flask for the web app. Users can enter features of a car and get a predicted price as output.</p>
+        <div class="project-tech"><span>PyTorch</span><span>Flask</span><span>DVC</span><span>Docker</span><span>GitHub Actions</span><span>AWS</span></div>
+      </div>
+      <div class="project-image"><img alt="Car Price Prediction" src="https://via.placeholder.com/250x150.png?text=Car+Price+Prediction"/></div>
+    </div>
+  </div>
+</section>
+
+    <!-- Machine Learning -->
+<section class="category slide-up hidden" data-category="ml">
+  <div style="text-align: center;"><h2 class="fade-in-heading">Machine Learning</h2></div>
+  <div class="project-list centered">
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>Mobile Price Classification</h3>
+        <p>An end-to-end machine learning pipeline to classify mobile phones into price categories using scikit-learn models and FastAPI. Users can enter the specs of a mobile and expect a predicted price category as an output.</p>
+        <div class="project-tech"><span>scikit-learn</span><span>FastAPI</span><span>Docker</span><span>GitHub Actions</span><span>Azure</span></div>
+      </div>
+      <div class="project-image"><img alt="Mobile Price Classification" src="https://via.placeholder.com/250x150.png?text=Mobile+Price+Classification"/></div>
+    </div>
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>Japan's Hostels Price Prediction</h3>
+        <p>A Flask-based web app to predict hostel prices in Japan using CatBoost. Users can enter their preferences to find the expected cost of the hostel they’d like to rent.</p>
+        <div class="project-tech"><span>CatBoost</span><span>Flask</span><span>Docker</span><span>GitHub Actions</span><span>Heroku</span></div>
+      </div>
+      <div class="project-image"><img alt="Japan's Hostels Price Prediction" src="https://via.placeholder.com/250x150.png?text=Hostel+Price+Prediction"/></div>
+    </div>
+  </div>
+</section>
+
+   <!-- Data Science & Analytics -->
+<section class="category slide-up hidden" data-category="data">
+  <div style="text-align: center;"><h2 class="fade-in-heading">Data Science &amp; Analytics</h2></div>
+  <div class="project-list centered">
+    <div class="project-card" style="margin-bottom: 3rem;">
+      <div class="project-description">
+        <h3>Jupyter Notebooks Collection</h3>
+        <p>A collection of data science Jupyter notebooks showcasing various data and model related tasks on different datasets.</p>
+        <div class="project-tech"><span>scikit-learn</span><span>TensorFlow</span><span>PyTorch</span><span>CatBoost</span><span>EDA</span><span>Jupyter</span></div>
+      </div>
+      <div class="project-image"><img alt="Jupyter Notebooks Collection" src="https://via.placeholder.com/250x150.png?text=Notebook+Collection"/></div>
+    </div>
+  </div>
+</section>
+
+   <!-- 📬 Contact Section -->
+   <section class="footer zoom-in hidden" id="contact">
+    <div style="text-align: center;">
+     <h1 class="fade-in-heading">
+      Let’s Connect
+     </h1>
+    </div>
+    <p>
+     If you'd like to get in touch, send me a message below!
+    </p>
+    <form action="https://formspree.io/f/YOUR_ID_HERE" class="contact-form" method="POST">
+     <input name="name" placeholder="Your Name" required="" type="text"/>
+     <input name="email" placeholder="Your Email" required="" type="email"/>
+     <textarea name="message" placeholder="Your Message" required="" rows="5"></textarea>
+     <button type="submit">
+      Send Message
+     </button>
+    </form>
+    <div class="footer-links">
+     <a href="https://github.com/yourusername" target="_blank">
+      GitHub
+     </a>
+     <a href="https://linkedin.com/in/yourusername" target="_blank">
+      LinkedIn
+     </a>
+     <a download="" href="cv/Yannis-CV.pdf">
+      Download CV
+     </a>
+    </div>
+   </section>
+  </main>
+  <!-- 🔝 Back to Top Button -->
+  <button id="backToTop" title="Go to top">
+   <svg alt="Go to top" class="lucide lucide-circle-arrow-up-icon lucide-circle-arrow-up" fill="none" height="36" id="upArrowIcon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10">
+    </circle>
+    <path d="m16 12-4-4-4 4">
+    </path>
+    <path d="M12 16V8">
+    </path>
+   </svg>
+  </button>
+  <!-- 🧠 JavaScript Logic (Animation, Filter, Theme) -->
+  <script>
+   const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeInObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in-section').forEach(section => {
+        fadeInObserver.observe(section);
+      });
+
+      const buttons = document.querySelectorAll('.filters button');
+      const categories = document.querySelectorAll('.category');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+
+          buttons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          categories.forEach(section => {
+            const match = section.getAttribute('data-category') === filter || filter === 'all';
+            section.style.display = match ? 'block' : 'none';
+            if (match) section.classList.add('fade-in');
+          });
+        });
+      });
+
+      const themeToggleBtn = document.getElementById('themeToggle');
+      const body = document.body;
+      const moonSVG = `
+        <svg xmlns="http://www.w3.org/2000/svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      `;
+
+      const sunSVG = `
+        <svg xmlns="http://www.w3.org/2000/svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      `;
+
+      function setTheme(isLight) {
+        const icon = isLight ? sunSVG : moonSVG;
+        body.classList.toggle('light-mode', isLight);
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        themeToggleBtn.innerHTML = icon;
+
+        // Re-trigger animation
+        const newIcon = themeToggleBtn.querySelector('svg');
+        newIcon.classList.add('theme-anim');
+        void newIcon.offsetWidth; // force reflow
+        newIcon.classList.remove('theme-anim');
+        newIcon.classList.add('theme-anim'); // add it back to trigger again
+
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+
+          const newArrow = backToTopBtn.querySelector('svg');
+          newArrow.classList.add('icon-anim');
+          void newArrow.offsetWidth;
+          newArrow.classList.remove('icon-anim');
+          newArrow.classList.add('icon-anim');
+        }
+      }
+        themeToggleBtn.addEventListener('click', () => {
+          setTheme(!body.classList.contains('light-mode'));
+      });
+
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') setTheme(true);
+
+      const backToTopBtn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 20) {
+          navbar.classList.add("shadow");
+        } else {
+          navbar.classList.remove("shadow");
+        }
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add("visible");
+        } else {
+          backToTopBtn.classList.remove("visible");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+      });
+
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            scrollObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in-section, .slide-up, .zoom-in').forEach(el => {
+        scrollObserver.observe(el);
+      });
+
+      document.querySelector('a[href="#hero"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+  </script>
+ </body>
+</html>
