@@ -98,28 +98,28 @@
   <!-- Languages & Frameworks -->
   <div style="text-align: center;"><h2 class="fade-in-heading">Languages &amp; Frameworks</h2></div>
   <div class="skills-grid">
-    <div class="skill"><img alt="Python" src="icons/Python.svg" style="height:40px;" /><span>Python</span></div>
-    <div class="skill"><img alt="JavaScript" src="icons/JavaScript.svg" style="height:40px;" /><span>JavaScript</span></div>
-    <div class="skill"><img alt="HTML" src="icons/HTML.svg" style="height:40px;" /><span>HTML</span></div>
-    <div class="skill"><img alt="CSS" src="icons/CSS.svg" style="height:40px;" /><span>CSS</span></div>
+    <div class="skill"><img id="python-icon" alt="Python" src="icons/Python.svg" style="height:40px;" /><span>Python</span></div>
+    <div class="skill"><img id="javascript-icon" alt="JavaScript" src="icons/JavaScript.svg" style="height:40px;" /><span>JavaScript</span></div>
+    <div class="skill"><img id="html-icon" alt="HTML" src="icons/HTML.svg" style="height:40px;" /><span>HTML</span></div>
+    <div class="skill"><img id="css-icon" alt="CSS" src="icons/CSS.svg" style="height:40px;" /><span>CSS</span></div>
   </div>
   <div class="skills-grid">
-    <div class="skill"><img alt="FastAPI" src="icons/FastAPI.svg" style="height:40px;" /><span>FastAPI</span></div>
-    <div class="skill"><img alt="Streamlit" src="icons/Streamlit.svg" style="height:40px;" /><span>Streamlit</span></div>
-    <div class="skill"><img alt="LangChain" src="icons/LangChain.svg" style="height:40px;" /><span>LangChain</span></div>
-    <div class="skill"><img alt="OpenAI" src="icons/OpenAI.svg" style="height:40px;" /><span>OpenAI API</span></div>
-    <div class="skill"><img alt="PyTorch" src="icons/PyTorch.svg" style="height:40px;" /><span>PyTorch</span></div>
-    <div class="skill"><img alt="Pandas" src="icons/Pandas.svg" style="height:40px;" /><span>Pandas</span></div>
-    <div class="skill"><img alt="NumPy" src="icons/NumPy.svg" style="height:40px;" /><span>NumPy</span></div>
-    <div class="skill"><img alt="scikit-learn" src="icons/Scikit-Learn.svg" style="height:40px;" /><span>scikit-learn</span></div>
+    <div class="skill"><img id="fastapi-icon" alt="FastAPI" src="icons/FastAPI.svg" style="height:40px;" /><span>FastAPI</span></div>
+    <div class="skill"><img id="streamlit-icon" alt="Streamlit" src="icons/Streamlit.svg" style="height:40px;" /><span>Streamlit</span></div>
+    <div class="skill"><img id="langchain-icon" alt="LangChain" src="icons/LangChain.svg" style="height:40px;" /><span>LangChain</span></div>
+    <div class="skill"><img id="openai-icon" alt="OpenAI" src="icons/OpenAI-white.svg" style="height:40px;"/><span>OpenAI API</span></div>
+    <div class="skill"><img id="pytorch-icon" alt="PyTorch" src="icons/PyTorch.svg" style="height:40px;" /><span>PyTorch</span></div>
+    <div class="skill"><img id="pandas-icon" alt="Pandas" src="icons/Pandas.svg" style="height:40px;" /><span>Pandas</span></div>
+    <div class="skill"><img id="numpy-icon" alt="NumPy" src="icons/NumPy.svg" style="height:40px;" /><span>NumPy</span></div>
+    <div class="skill"><img id="sklearn-icon" alt="scikit-learn" src="icons/Scikit-Learn.svg" style="height:40px;" /><span>scikit-learn</span></div>
   </div>
 
   <!-- Databases & Infrastructure -->
   <div style="text-align: center;"><h2 class="fade-in-heading">Databases &amp; Infrastructure</h2></div>
   <div class="skills-grid">
-    <div class="skill"><img alt="PostgreSQL" src="icons/PostgreSQL.svg" style="height:40px;" /><span>PostgreSQL</span></div>
-    <div class="skill"><img alt="Redis" src="icons/Redis.svg" style="height:40px;" /><span>Redis</span></div>
-    <div class="skill"><img alt="Pinecone" src="icons/Pinecone.svg" style="height:40px; width:100px;" /><span>Pinecone</span></div>
+    <div class="skill"><img id="postgresql-icon" alt="PostgreSQL" src="icons/PostgreSQL.svg" style="height:40px;" /><span>PostgreSQL</span></div>
+    <div class="skill"><img id="redis-icon" alt="Redis" src="icons/Redis.svg" style="height:40px;" /><span>Redis</span></div>
+    <div class="skill"><img id="pinecone-icon" alt="Pinecone" src="icons/Pinecone-white.svg" style="height:40px; width:100px;" /><span>Pinecone</span></div>
   </div>
 
   <!-- Tools & Technologies -->
@@ -371,6 +371,16 @@
         void newIcon.offsetWidth; // force reflow
         newIcon.classList.remove('theme-anim');
         newIcon.classList.add('theme-anim'); // add it back to trigger again
+
+        const openaiIcon = document.getElementById("openai-icon");
+        if (openaiIcon) {
+          openaiIcon.src = isLight ? "icons/OpenAI-black.svg" : "icons/OpenAI-white.svg";
+        }
+
+        const pineconeIcon = document.getElementById("pinecone-icon");
+        if (pineconeIcon) {
+          pineconeIcon.src = isLight ? "icons/Pinecone-black.svg" : "icons/Pinecone-white.svg";
+        }
 
         const backToTopBtn = document.getElementById('backToTop');
         if (backToTopBtn) {
