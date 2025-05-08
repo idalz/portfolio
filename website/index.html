@@ -35,41 +35,23 @@
   </link>
  </head>
  <body>
-  <!-- ⏳ Page Loader -->
+  <!-- Page Loader -->
   <div id="loader">
    <div class="spinner">
    </div>
   </div>
-  <!-- ✅ Sticky Navbar -->
+  <!-- Navigation bar -->
   <nav class="navbar">
    <div class="nav-left">
     <img alt="Logo" class="nav-icon" src="icons/logo.png"/>
-    <span class="brand-name">
-     Yannis
-    </span>
+    <span class="brand-name">Yannis Dalezios</span>
    </div>
    <div class="nav-right-wrapper">
     <ul class="nav-right">
-     <li>
-      <a href="#hero">
-       Home
-      </a>
-     </li>
-     <li>
-      <a href="#skills">
-       Skills
-      </a>
-     </li>
-     <li>
-      <a href="#projects">
-       Projects
-      </a>
-     </li>
-     <li>
-      <a href="#contact">
-       Contact
-      </a>
-     </li>
+     <li><a href="#hero">Home</a></li>
+     <li><a href="#skills">Skills</a></li>
+     <li><a href="#projects">Projects</a></li>
+     <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="theme-toggle">
      <button id="themeToggle">
@@ -81,17 +63,18 @@
     </div>
    </div>
   </nav>
-  <!-- 🌟 Main Content -->
+  <!-- Main Content -->
   <main>
-   <!-- 🧍 Hero Section -->
+
+   <!-- About Section -->
 <section class="hero fade-in-section hidden" id="hero">
   <img alt="Yannis Profile" class="profile-pic" src="projects/pics/profile.png" />
-  <div style="text-align: center;"><h1 class="fade-in-heading">Yannis</h1></div>
-  <p class="title">Aspiring Machine Learning Engineer</p>
-  <p class="mission">Driven by curiosity. Focused on growth. Dreaming of thriving in Japan.</p>
+  <div style="text-align: center;"><h1 class="fade-in-heading">Yannis Dalezios</h1></div>
+  <p class="title">TODO Title</p>
+  <p class="mission">TODO Mission</p>
 </section>
 
-   <!-- 🛠️ Skills Section -->
+   <!-- Skills Section -->
 <section class="skills zoom-in hidden" id="skills">
   <div style="text-align: center;"><h1 class="fade-in-heading">My Core Tools</h1></div>
 
@@ -131,14 +114,15 @@
   </div>
 </section>
 
-   <!-- 🗂️ Projects Section -->
+   <!-- Projects Section -->
    <section id="projects">
     <div style="text-align: center;">
      <h1 class="fade-in-heading">
       My projects
      </h1>
     </div>
-    <!-- 🔘 Filter Buttons -->
+
+    <!-- Filter Buttons -->
     <div class="filters">
      <button class="active" data-filter="all">All</button>
      <button data-filter="ai">AI &amp; LLM</button>
@@ -147,6 +131,7 @@
      <button data-filter="ml">Machine Learning </button>
      <button data-filter="data">Data Science &amp; Analytics</button>
     </div>
+
     <!-- AI & LLM -->
 <section class="category slide-up hidden stagger" data-category="ai">
   <div style="text-align: center;"><h2 class="fade-in-heading">AI &amp; LLM</h2></div>
@@ -157,7 +142,7 @@
         <p>An AI-driven assistant built with Langchain, OpenAI, Pinecone, FastAPI, PostgreSQL and Streamlit. Users can create profiles, extract key details from job descriptions and resumes, evaluate their compatibility with specific jobs, and generate personalized cover letters. Recruiters can find ideal candidates in a single click using the power of RAG.</p>
         <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span><span>FastAPI</span><span>PostgreSQL</span><span>Streamlit</span><span>Docker</span></div>
       </div>
-      <div class="project-image"><img alt="AI-Powered Job Application Assistant" src="https://via.placeholder.com/250x150.png?text=AI+Job+Assistant"/></div>
+      <div class="project-image"><img alt="AI-Powered Job Application Assistant" src="project-icons/ai-job-app.png"/></div>
     </div>
     <div class="project-card" style="margin-bottom: 3rem;">
       <div class="project-description">
@@ -165,7 +150,7 @@
         <p>An intelligent question-answering app using LangChain agents with OpenAI, Pinecone, and Streamlit. Users can upload their own documents (PDF) and ask any question. The agent provides an answer based on the document or falls back to Arxiv and Wikipedia.</p>
         <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span><span>Streamlit</span><span>RAG</span><span>Docker</span></div>
       </div>
-      <div class="project-image"><img alt="Multi-Source RAG App" src="https://via.placeholder.com/250x150.png?text=Multi-Source+RAG+App"/></div>
+      <div class="project-image"><img alt="Multi-Source RAG App" src="project-icons/ai-rag-qa.png"/></div>
     </div>
     <div class="project-card" style="margin-bottom: 3rem;">
       <div class="project-description">
@@ -173,10 +158,11 @@
         <p>A full-stack application built with FastAPI, OpenAI, LangChain and FAISS. Each user has a unique session ID, enabling personalized and memory-aware conversations that persist across messages during the session.</p>
         <div class="project-tech"><span>FastAPI</span><span>OpenAI</span><span>LangChain</span><span>FAISS</span><span>JavaScript</span><span>Docker</span></div>
       </div>
-      <div class="project-image"><img alt="AI Chatbot with Memory" src="https://via.placeholder.com/250x150.png?text=AI+Chatbot+with+Memory"/></div>
+      <div class="project-image"><img alt="AI Chatbot with Memory" src="project-icons/ai-chatbot.png"/></div>
     </div>
   </div>
 </section>
+
     <!-- Software Engineering -->
 <section class="category slide-up hidden stagger-2" data-category="software">
   <div style="text-align: center;"><h2 class="fade-in-heading">Software Engineering</h2></div>
@@ -187,7 +173,7 @@
         <p>A full-stack task manager app with FastAPI, PostgreSQL and JWT-based user authentication. Users can create their account and safely manage their tasks. Includes CRUD operations, task filtering, sorting and searching.</p>
         <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>JWT</span><span>Alembic</span><span>Docker</span></div>
       </div>
-      <div class="project-image"><img alt="Task Manager Web App" src="https://via.placeholder.com/250x150.png?text=Task+Manager+Web+App"/></div>
+      <div class="project-image"><img alt="Task Manager Web App" src="project-icons/se-task-manager.png"/></div>
     </div>
     <div class="project-card" style="margin-bottom: 3rem;">
       <div class="project-description">
@@ -195,7 +181,7 @@
         <p>A real-time chat platform using FastAPI, PostgreSQL, JWT-based user authentication, WebSockets, and Redis for pub/sub messaging. Users can create their account and join public rooms or send DMs to others in real time.</p>
         <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>JWT</span><span>WebSockets</span><span>Redis</span><span>Alembic</span><span>Docker</span></div>
       </div>
-      <div class="project-image"><img alt="Real-Time Chat App" src="https://via.placeholder.com/250x150.png?text=Real-Time+Chat+App"/></div>
+      <div class="project-image"><img alt="Real-Time Chat App" src="project-icons/se-chat-app.png"/></div>
     </div>
     <div class="project-card" style="margin-bottom: 3rem;">
       <div class="project-description">
@@ -203,7 +189,7 @@
         <p>A full-stack job board aggregator with FastAPI, PostgreSQL and BeautifulSoup. Users can search dev jobs by tags and keywords (scraped from different sources). Includes token-based access for admin to manage or scrape jobs.</p>
         <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>BeautifulSoup</span><span>Docker</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
       </div>
-      <div class="project-image"><img alt="Job Board App" src="https://via.placeholder.com/250x150.png?text=Job+Board+App"/></div>
+      <div class="project-image"><img alt="Job Board App" src="project-icons/se-job-board.png"/></div>
     </div>
   </div>
 </section>
@@ -218,7 +204,7 @@
         <p>An end-to-end car price prediction system using a neural network in PyTorch and Flask for the web app. Users can enter features of a car and get a predicted price as output.</p>
         <div class="project-tech"><span>PyTorch</span><span>Flask</span><span>DVC</span><span>Docker</span><span>GitHub Actions</span><span>AWS</span></div>
       </div>
-      <div class="project-image"><img alt="Car Price Prediction" src="https://via.placeholder.com/250x150.png?text=Car+Price+Prediction"/></div>
+      <div class="project-image"><img alt="Car Price Prediction" src="project-icons/dl-car.png"/></div>
     </div>
   </div>
 </section>
@@ -233,7 +219,7 @@
         <p>An end-to-end machine learning pipeline to classify mobile phones into price categories using scikit-learn models and FastAPI. Users can enter the specs of a mobile and expect a predicted price category as an output.</p>
         <div class="project-tech"><span>scikit-learn</span><span>FastAPI</span><span>Docker</span><span>GitHub Actions</span><span>Azure</span></div>
       </div>
-      <div class="project-image"><img alt="Mobile Price Classification" src="https://via.placeholder.com/250x150.png?text=Mobile+Price+Classification"/></div>
+      <div class="project-image"><img alt="Mobile Price Classification" src="project-icons/ml-mobile.png"/></div>
     </div>
     <div class="project-card" style="margin-bottom: 3rem;">
       <div class="project-description">
@@ -241,7 +227,7 @@
         <p>A Flask-based web app to predict hostel prices in Japan using CatBoost. Users can enter their preferences to find the expected cost of the hostel they’d like to rent.</p>
         <div class="project-tech"><span>CatBoost</span><span>Flask</span><span>Docker</span><span>GitHub Actions</span><span>Heroku</span></div>
       </div>
-      <div class="project-image"><img alt="Japan's Hostels Price Prediction" src="https://via.placeholder.com/250x150.png?text=Hostel+Price+Prediction"/></div>
+      <div class="project-image"><img alt="Japan's Hostels Price Prediction" src="project-icons/ml-japan-hostel.png"/></div>
     </div>
   </div>
 </section>
@@ -261,7 +247,7 @@
   </div>
 </section>
 
-   <!-- 📬 Contact Section -->
+   <!-- Contact Section -->
    <section class="footer zoom-in hidden" id="contact">
     <div style="text-align: center;">
      <h1 class="fade-in-heading">
@@ -271,7 +257,7 @@
     <p>
      If you'd like to get in touch, send me a message below!
     </p>
-    <form action="https://formspree.io/f/YOUR_ID_HERE" class="contact-form" method="POST">
+    <form action="https://formspree.io/f/xqaqbgya" class="contact-form" method="POST">
      <input name="name" placeholder="Your Name" required="" type="text"/>
      <input name="email" placeholder="Your Email" required="" type="email"/>
      <textarea name="message" placeholder="Your Message" required="" rows="5"></textarea>
@@ -280,19 +266,22 @@
      </button>
     </form>
     <div class="footer-links">
-     <a href="https://github.com/yourusername" target="_blank">
+     <a href="https://github.com/idalz" target="_blank">
       GitHub
      </a>
-     <a href="https://linkedin.com/in/yourusername" target="_blank">
+     <a href="https://linkedin.com/in/idalez" target="_blank">
       LinkedIn
      </a>
+    <!-- CV Button
      <a download="" href="cv/Yannis-CV.pdf">
       Download CV
-     </a>
+     </a>  
+    -->
     </div>
    </section>
   </main>
-  <!-- 🔝 Back to Top Button -->
+
+  <!-- Back to Top Button -->
   <button id="backToTop" title="Go to top">
    <svg alt="Go to top" class="lucide lucide-circle-arrow-up-icon lucide-circle-arrow-up" fill="none" height="36" id="upArrowIcon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
     <circle cx="12" cy="12" r="10">
@@ -303,7 +292,8 @@
     </path>
    </svg>
   </button>
-  <!-- 🧠 JavaScript Logic (Animation, Filter, Theme) -->
+
+  <!-- JavaScript Logic (Animation, Filter, Theme) -->
   <script>
    const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
