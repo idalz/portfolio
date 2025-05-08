@@ -444,6 +444,25 @@ body.light-mode .navbar li a:hover {
   z-index: 1001;
 }
 
+/* Close button in mobile nav */
+.mobile-close {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+#closeMenu {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
 .brand-name {
   color: #f2f2f2;
   transition: color 0.3s ease;
@@ -458,15 +477,73 @@ body.light-mode .brand-name {
 .nav-right-wrapper {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-right {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 2rem;
   margin: 0;
   padding: 0;
+}
+
+/* Slide-in animation */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.nav-right {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.nav-right.active {
+  transform: translateX(0);
+  opacity: 1;
+  animation: slideInLeft 0.3s ease forwards;
+}
+
+.nav-right.closing {
+  animation: slideOutLeft 0.3s ease forwards;
+}
+
+#navOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.6);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+body.nav-open #navOverlay {
+  opacity: 1;
+  visibility: visible;
 }
 
 .icon {
@@ -644,6 +721,9 @@ body.light-mode #themeToggle:hover svg {
   box-shadow: none;
   border-radius: 0;
   transition: none;
+  vertical-align: middle;
+  position: relative;
+  top: 0.5px;  
 }
 
 .theme-toggle svg {
@@ -1039,9 +1119,18 @@ body.loaded #loader {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    z-index: 1002;
+    padding: 0.75rem 1rem;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .nav-left {
@@ -1049,20 +1138,16 @@ body.loaded #loader {
   }
 
   .nav-top-mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(12, 12, 12, 0.95);
-    z-index: 1002;
+    background-color: transparent !important;
+    box-shadow: none;
+    border: none;
+    height: auto;
+    padding: 0.5rem 1rem; /* optional, can adjust */
+    min-height: unset;
   }
 
   .desktop-only {
-    display: none;
+    display: none!important;
   }
 
   .mobile-theme-toggle {
@@ -1075,12 +1160,15 @@ body.loaded #loader {
   }
 
   .theme-toggle {
-    position: static; /* inside .nav-top-mobile, so no need to fix it */
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-right {
     position: fixed;
-    top: 60px;
+    top: 0;
     left: -250px;
     height: calc(100vh - 60px);
     width: 250px;
@@ -1093,6 +1181,17 @@ body.loaded #loader {
     overflow-y: auto;
     transition: left 0.3s ease;
     z-index: 1000;
+  }
+
+  .nav-right li {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-right li a {
+    display: flex;
+    align-items: center;       /* ✅ Ensures link text is vertically centered */
+    height: 100%;              /* Optional: stretch to nav height */
   }
 
   .nav-right.active {
@@ -1212,4 +1311,94 @@ body.light-mode #themeToggleMobile svg {
   0%   { transform: rotate(0deg) scale(0.6); }
   50%  { transform: rotate(180deg) scale(1.2); }
   100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Reset for desktop */
+@media (min-width: 769px) {
+  .nav-right {
+    position: static;
+    transform: none;
+    opacity: 1;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    animation: none !important;
+  } 
+
+  #navOverlay {
+    display: none;
+  }
+}
+
+.mobile-close {
+  display: none;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-top: 1.5rem;
+    animation: fadeSlideIn 0.3s ease-out;
+  }
+
+  .nav-right:not(.active) .mobile-close {
+    display: none;
+  }
+
+  .nav-right {
+    height: 100vh;
+  }
+
+  .nav-right.active {
+    display: flex;
+    left: 0;
+  }
+}
+
+body.light-mode .nav-right {
+  background-color: #ffffff;
+}
+
+body.light-mode .hamburger,
+body.light-mode #closeMenu {
+  color: #121212; /* Dark text in light mode */
+}
+
+body.light-mode .hamburger svg,
+body.light-mode #closeMenu svg {
+  stroke: #121212;
+  color: #121212;
+}
+
+body.light-mode .hamburger:hover,
+body.light-mode #closeMenu:hover {
+  color: #1fa9c6;
+}
+
+body:not(.light-mode) .hamburger:hover,
+body:not(.light-mode) #closeMenu:hover {
+  color: #1fa9c6;
+}
+
+body:not(.light-mode) .hamburger svg:hover,
+body:not(.light-mode) #closeMenu svg:hover {
+  stroke: #1fa9c6;
+  color: #1fa9c6;
 }

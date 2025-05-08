@@ -45,7 +45,7 @@
 
   <!-- Navigation bar -->
   <nav class="navbar">
-
+    <div id="navOverlay"></div>
     <!-- Desktop logo and name (hidden on mobile) -->
     <div class="nav-left">
       <img alt="Logo" class="nav-icon" src="icons/logo.png" />
@@ -59,6 +59,11 @@
 
     <div class="nav-right-wrapper">
       <ul class="nav-right" id="navMenu">
+        <li class="mobile-close">
+          <div class="mobile-close">
+            <button id="closeMenu">✕</button>
+          </div>
+        </li>
         <li><a href="#hero">Home</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -498,6 +503,105 @@
       navMenu.classList.toggle('active');
     });
     
+    const closeMenuBtn = document.getElementById('closeMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.add('active');
+      navMenu.classList.remove('closing');
+      document.body.classList.add('nav-open');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      navMenu.classList.add('closing');
+      navMenu.classList.remove('active');
+      setTimeout(() => {
+        navMenu.classList.remove('closing');
+        document.body.classList.remove('nav-open');
+      }, 300); // Match the slideOutLeft duration
+    });
+
+    // Optional: close menu on link click
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.add('closing');
+        navMenu.classList.remove('active');
+        setTimeout(() => {
+          navMenu.classList.remove('closing');
+          document.body.classList.remove('nav-open');
+        }, 300);
+      });
+    });
+
+    // === Mobile Nav: Open ===
+    function openMobileNav() {
+      const nav = document.querySelector('.nav-right');
+      const overlay = document.querySelector('#navOverlay');
+
+      nav.classList.add('active');
+      document.body.classList.add('nav-open');
+
+      overlay.style.display = 'block';
+      overlay.style.opacity = '1';
+      overlay.style.visibility = 'visible';
+    }
+
+    // === Mobile Nav: Close with Animation ===
+    function closeMobileNav() {
+      const nav = document.querySelector('.nav-right');
+      const overlay = document.querySelector('#navOverlay');
+
+      // Already closed
+      if (!document.body.classList.contains('nav-open')) return;
+
+      // Add closing animation
+      nav.classList.add('closing');
+
+      // Hide overlay smoothly
+      overlay.style.opacity = '0';
+      overlay.style.visibility = 'hidden';
+
+      // Wait for animation to finish
+      setTimeout(() => {
+        nav.classList.remove('active', 'closing');
+        document.body.classList.remove('nav-open');
+        overlay.style.display = 'none';
+      }, 300); // Match your CSS animation duration
+    }
+
+    // === Event Listeners ===
+    document.querySelector('.hamburger').addEventListener('click', openMobileNav);
+    document.querySelector('#closeMenu').addEventListener('click', closeMobileNav);
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      const nav = document.querySelector('.nav-right');
+      const hamburger = document.querySelector('.hamburger');
+
+      if (
+        window.innerWidth <= 768 &&
+        document.body.classList.contains('nav-open') &&
+        !nav.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        closeMobileNav();
+      }
+    });
+
+    // Close on scroll
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth <= 768 && document.body.classList.contains('nav-open')) {
+        closeMobileNav();
+      }
+    });
+
+    // Close on resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMobileNav();
+      }
+    });
+
+
   </script>
  </body>
 </html>
