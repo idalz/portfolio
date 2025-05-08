@@ -35,34 +35,40 @@
   </link>
  </head>
  <body>
+
   <!-- Page Loader -->
   <div id="loader">
    <div class="spinner">
    </div>
-  </div>
+  </div> 
+   
   <!-- Navigation bar -->
   <nav class="navbar">
-   <div class="nav-left">
-    <img alt="Logo" class="nav-icon" src="icons/logo.png"/>
-    <span class="brand-name">Yannis Dalezios</span>
-   </div>
-   <div class="nav-right-wrapper">
-    <ul class="nav-right">
-     <li><a href="#hero">Home</a></li>
-     <li><a href="#skills">Skills</a></li>
-     <li><a href="#projects">Projects</a></li>
-     <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="theme-toggle">
-     <button id="themeToggle">
-      <svg class="lucide lucide-moon-icon lucide-moon" fill="none" height="24" id="themeIcon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-       <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z">
-       </path>
-      </svg>
-     </button>
+    <div class="nav-left">
+      <img alt="Logo" class="nav-icon" src="icons/logo.png" />
+      <span class="brand-name">Yannis Dalezios</span>
     </div>
-   </div>
+  
+    <div class="nav-right-wrapper">
+      <button class="hamburger" id="hamburger">&#9776;</button>
+  
+      <ul class="nav-right" id="navMenu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+  
+      <div class="theme-toggle">
+        <button id="themeToggle">
+          <svg class="lucide lucide-moon-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+      </div>
+    </div>
   </nav>
+
   <!-- Main Content -->
   <main>
 
@@ -437,6 +443,13 @@
           window.open(url, '_blank');
         }
       });
+    });
+    
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
     });
   </script>
  </body>

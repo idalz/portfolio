@@ -425,6 +425,17 @@ body.light-mode .navbar li a:hover {
   object-fit: contain;
 }
 
+/* Hamburger hidden by default */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  z-index: 1001;
+}
+
 .brand-name {
   color: #f2f2f2;
   transition: color 0.3s ease;
@@ -989,10 +1000,6 @@ body.loaded #loader {
     font-size: 0.9rem;
   }
 
-  
-
-  
-
   h3 {
     font-size: 1.1rem;
   }
@@ -1008,6 +1015,15 @@ body.loaded #loader {
     align-items: flex-start;
   }
 
+  .nav-left {
+    margin-bottom: 0.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto; /* push it to the right */
+  }
+
   .nav-right-wrapper {
     flex-direction: column;
     align-items: flex-start;
@@ -1017,17 +1033,30 @@ body.loaded #loader {
   }
 
   .nav-right {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 220px;
+    background-color: rgba(12, 12, 12, 0.95);
+    backdrop-filter: blur(8px);
+    padding-top: 5rem;
+    padding-left: 1.5rem;
+    display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
   }
 
-  .nav-left {
-    margin-bottom: 0.5rem;
+  .nav-right.active {
+    right: 0;
   }
 
   .theme-toggle {
-    align-self: flex-end;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
 }
 
