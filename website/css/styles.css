@@ -1,47 +1,151 @@
-/* ============================================
-   🔧 Base Reset & Global Styling
-============================================ */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(30px)
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0)
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+      transform: translateY(0)
+  }
+
+  to {
+      opacity: 0;
+      transform: translateY(30px)
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0
+  }
+
+  to {
+      transform: translateX(0);
+      opacity: 1
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+      transform: translateX(0);
+      opacity: 1
+  }
+
+  to {
+      transform: translateX(-100%);
+      opacity: 0
+  }
+}
+
+@keyframes fadeInScale {
+  to {
+      opacity: 1;
+      transform: scale(1)
+  }
+}
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg)
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px)
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0)
+  }
+}
+
+@keyframes pop {
+  0% {
+      transform: scale(1)
+  }
+
+  50% {
+      transform: scale(.7)
+  }
+
+  to {
+      transform: scale(1.1)
+  }
+}
+
+@keyframes rotateIcon {
+  0% {
+      transform: rotate(0deg) scale(.6)
+  }
+
+  50% {
+      transform: rotate(180deg) scale(1.2)
+  }
+
+  to {
+      transform: rotate(360deg) scale(1)
+  }
+}
+
+@keyframes fadeSlideIn {
+  0% {
+      opacity: 0;
+      transform: translateX(20px)
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0)
+  }
+}
+
+*,body {
+  padding: 0
+}
+
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth
 }
 
 body {
   background-color: #121212;
   color: #f2f2f2;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter",sans-serif;
   line-height: 1.6;
-  padding: 0;  /* ✅ remove edge spacing */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: hidden
 }
 
 body.light-mode svg#themeIcon {
-  stroke: #121212 !important;
+  stroke: #121212!important
 }
 
 body:not(.light-mode) svg#themeIcon {
-  stroke: #f2f2f2 !important;
+  stroke: #f2f2f2!important
 }
 
 main {
   max-width: none;
-  width: 100%;
+  width: 100%
 }
-
-
-/* ============================================
-   🧠 Headings & Typography
-============================================ */
-
-
-
 
 h2::after {
   content: "";
@@ -50,23 +154,18 @@ h2::after {
   left: 0;
   height: 2px;
   width: 100%;
-  background-color: #888;
+  background-color: #888
 }
 
 .category.right h2::after {
-  left: auto;
-  right: 0;
+  left: auto
 }
 
 h3 {
   font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem
 }
 
-
-/* ============================================
-   🎛️ Filter Buttons
-============================================ */
 .filters {
   top: 0;
   background-color: transparent;
@@ -76,68 +175,63 @@ h3 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: .5rem
 }
 
 .filters button {
-  background-color: #1fa9c6;
-  border: none;
-  padding: 0.5rem 1rem;
-  color: #f2f2f2;
+  background-color: #168aa6;
+  border: 0;
+  padding: .5rem 1rem;
+  color: #fff;
   border-radius: 4px;
-  margin: 0.2rem;
+  margin: .2rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color .2s ease
 }
 
 .filters button:hover {
-  background-color: #1998b3;
+  background-color: #12788f
 }
 
 .filters button.active {
   background-color: #0d5968;
-  font-weight: 600;
+  font-weight: 600
 }
 
-
-/* ============================================
-   🗂️ Project Categories and Layout
-============================================ */
 .category {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem
 }
 
-.category.left h2::after { left: 0; }
-.category.right h2::after { right: 0; }
+.category.left h2::after {
+  left: 0
+}
+
+.category.right h2::after {
+  right: 0
+}
 
 .project-list {
   display: flex;
-  flex-direction: column; /* 👈 THIS stacks them vertically */
-  align-items: center;
+  flex-direction: column;
   gap: 2 rem;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto
 }
 
 .project-list.centered {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center
 }
 
-.project-list.left,
-.project-list.right {
-  align-items: center; /* center align the vertical stack */
+.project-list,.project-list.left,.project-list.right {
+  align-items: center
 }
 
 .centered {
-  justify-content: center;
+  justify-content: center
 }
 
-
-/* ============================================
-   🖼️ Project Card Styling
-============================================ */
 .project-card {
   background: #1e1e1e;
   border-radius: 10px;
@@ -145,41 +239,36 @@ h3 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(255,255,255,.05);
   width: 100%;
   max-width: 900px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform .3s ease,box-shadow .3s ease;
   min-height: 250px;
-  cursor: pointer;
-
+  cursor: pointer
 }
 
 .project-card:hover {
   transform: scale(1.01);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 20px rgba(255,255,255,.04)
 }
 
-.project-card:focus-within { 
+.project-card:focus-within {
   outline: 1px solid #888;
   transform: scale(1.01);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 20px rgba(255,255,255,.06)
 }
 
-
-/* ============================================
-   🧾 Project Description & Tech Stack
-============================================ */
 .project-description {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  margin-right: 2rem;
+  margin-right: 2rem
 }
 
 .project-description p {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem
 }
 
 .project-image img {
@@ -187,63 +276,45 @@ h3 {
   height: 240px;
   object-fit: cover;
   border-radius: 10px;
-  display: block;
+  display: block
 }
 
 .project-tech {
   margin-top: auto;
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: .5rem;
+  flex-wrap: wrap
 }
 
 .project-tech span {
   background: #333;
-  padding: 0.3rem 0.7rem;
+  padding: .3rem .7rem;
   border-radius: 5px;
-  font-size: 0.9rem;
+  font-size: .9rem
 }
 
 .project-tech i {
-  margin-right: 4px;
+  margin-right: 4px
 }
 
-
-/* ============================================
-   ✨ Fade In/Out Animations
-============================================ */
 .fade-in {
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
+  animation: fadeIn .3s ease
 }
 
 .fade-out {
-  animation: fadeOut 0.3s ease;
+  animation: fadeOut .3s ease
 }
 
-@keyframes fadeOut {
-  from { opacity: 1; transform: translateY(0); }
-  to   { opacity: 0; transform: translateY(30px); }
-}
-
-
-/* ============================================
-   👤 About Section Styles
-============================================ */
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem
 }
 
 .hero {
   text-align: center;
   margin-bottom: 2.5rem;
-  padding-top: 80px;
+  padding-top: 80px
 }
 
 .profile-pic {
@@ -251,128 +322,126 @@ h3 {
   height: 240px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(255,255,255,0.1);
-  margin-bottom: 1rem;
+  box-shadow: 0 0 12px rgba(255,255,255,.1);
+  margin-bottom: 1rem
 }
 
-.hero .title {
+.focus p,.hero .title {
   font-size: 1.2rem;
-  color: #ccc;
+  color: #ccc
 }
 
 .hero .mission {
-  margin-top: 0.5rem;
+  margin-top: .5rem;
   color: #aaa;
-  font-style: italic;
+  font-style: italic
 }
 
 .bio {
   font-size: 1rem;
   color: #ddd;
   line-height: 1.8;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem
 }
 
 hr {
-  border: none;
+  border: 0;
   border-top: 1px solid var(--accent-color);
   margin: 2rem auto;
-  width: 60%;
+  width: 60%
 }
 
-.projects 
-
-
-/* ============================================
-   🛠️ Skills Section
-============================================ */
-.skills h3 {
+.projects .skills h3 {
   margin-top: 2rem;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-color);
   border-bottom: 2px solid var(--accent-color);
   display: inline-block;
-  padding-bottom: 0.25rem;
+  padding-bottom: .25rem
 }
 
 .skills h2 {
   text-align: center;
   margin-top: 2rem;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 600
 }
 
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* Center the items horizontally */
+  justify-content: center;
   gap: 1.5rem;
-  margin: 1.5rem 0 3rem;
+  margin: 1.5rem 0 3rem
 }
-
 
 .skill {
   text-align: center;
   width: 100px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .5s ease;
+  flex: 0 1 100px
 }
 
-.skill i, .skill img {
+.skill i,.skill img {
   font-size: 2.5rem;
   height: 40px;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem
 }
 
 .focus p {
-  color: #ccc;
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.7
 }
 
 .skill span {
   display: block;
-  margin-top: 0.5rem;
+  margin-top: .5rem
 }
 
-.skill {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
-  flex: 0 1 100px;
-}
 .skills.visible .skill {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0)
 }
-.skills.visible .skill:nth-child(1) { transition-delay: 0.1s; }
-.skills.visible .skill:nth-child(2) { transition-delay: 0.2s; }
-.skills.visible .skill:nth-child(3) { transition-delay: 0.3s; }
 
-/* ============================================
-   🌐 Sticky Navbar Styles
-============================================ */
+.skills.visible .skill:nth-child(1) {
+  transition-delay: .1s
+}
+
+.skills.visible .skill:nth-child(2) {
+  transition-delay: .2s
+}
+
+.skills.visible .skill:nth-child(3) {
+  transition-delay: .3s
+}
+
+.nav-left,.navbar {
+  display: flex;
+  align-items: center
+}
+
 .navbar {
   position: sticky;
   top: 0;
   left: 0;
-  width: 100%;
   max-width: 100vw;
-  background-color: rgba(12, 12, 12, 0.85); /* spark blue with slight fade */
+  background-color: rgba(12,12,12,.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.8rem 2rem; /* Add back consistent spacing inside */
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: .8rem 2rem;
   box-sizing: border-box;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  transition: background-color .3s ease,backdrop-filter .3s ease;
+  justify-content: space-between
 }
 
 .navbar.shadow {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  transition: box-shadow .3s ease
 }
 
 .navbar ul {
@@ -380,7 +449,7 @@ hr {
   display: flex;
   gap: 2rem;
   padding: 0;
-  margin: 0;
+  margin: 0
 }
 
 .navbar li a {
@@ -388,16 +457,12 @@ hr {
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
-  position: relative;
+  transition: color .3s ease;
+  position: relative
 }
 
-.navbar li a:hover {
-  color: #1fa9c6;
-}
-
-body.light-mode .navbar li a:hover {
-  color: #1fa9c6;
+.navbar li a:hover,body.light-mode .navbar li a:hover {
+  color: #1fa9c6
 }
 
 .navbar li a::after {
@@ -408,124 +473,85 @@ body.light-mode .navbar li a:hover {
   left: 0;
   bottom: -4px;
   background-color: currentColor;
-  transition: width 0.3s ease;
+  transition: width .3s ease
 }
 
-.navbar li a:hover::after {
-  width: 100%;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar,.navbar li a:hover::after {
+  width: 100%
 }
 
 .nav-left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  gap: .75rem
 }
 
 .nav-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+  width: 40px;
+  height: 40px;
+  object-fit: contain
 }
 
-/* Hamburger hidden by default */
+#closeMenu,.hamburger {
+  background: 0 0;
+  border: 0;
+  color: #f2f2f2;
+  cursor: pointer
+}
+
 .hamburger {
   display: none;
   font-size: 2rem;
-  background: none;
-  border: none;
-  color: #f2f2f2;
-  cursor: pointer;
-  z-index: 1001;
+  z-index: 1001
 }
 
-/* Close button in mobile nav */
 .mobile-close {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem
 }
 
 #closeMenu {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #f2f2f2;
-  cursor: pointer;
+  font-size: 1.5rem
 }
 
 body.nav-open {
-  overflow: hidden;
+  overflow: hidden
 }
 
 .brand-name {
   color: #f2f2f2;
-  transition: color 0.3s ease;
+  transition: color .3s ease;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.1rem
 }
 
-body.light-mode .brand-name {
-  color: #121212;
+body.light-mode .brand-name,body.light-mode .icon,body.light-mode .navbar li a,body.light-mode h1,body.light-mode h2,body.light-mode h3 {
+  color: #121212
 }
 
-.nav-right-wrapper {
+.nav-right,.nav-right-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.5rem
 }
 
 .nav-right {
-  display: flex;
-  align-items: center;
   list-style: none;
   gap: 2rem;
   margin: 0;
   padding: 0;
-}
-
-/* Slide-in animation */
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-.nav-right {
   transform: translateX(-100%);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
+  transition: transform .3s ease,opacity .3s ease;
+  opacity: 0
 }
 
 .nav-right.active {
   transform: translateX(0);
   opacity: 1;
-  animation: slideInLeft 0.3s ease forwards;
+  animation: slideInLeft .3s ease forwards
 }
 
 .nav-right.closing {
-  animation: slideOutLeft 0.3s ease forwards;
+  animation: slideOutLeft .3s ease forwards
 }
 
 #navOverlay {
@@ -534,142 +560,109 @@ body.light-mode .brand-name {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(18, 18, 18, 0.6);
+  background-color: rgba(18,18,18,.6);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
+  transition: opacity .3s ease
 }
 
 body.nav-open #navOverlay {
   opacity: 1;
-  visibility: visible;
+  visibility: visible
 }
 
 .icon {
   width: 48px;
   height: 48px;
   color: #f2f2f2;
-  transition: color 0.3s ease;
-  cursor: pointer;
+  transition: color .3s ease;
+  cursor: pointer
 }
 
-.icon:hover {
-  color: #1fa9c6; /* Spark-blue hover effect */
-}
-
-body.light-mode .icon {
-  color: #121212;
-}
-
-body.light-mode .icon:hover {
-  color: #1fa9c6; /* Spark-blue hover effect */
+.icon:hover,body.light-mode .icon:hover {
+  color: #1fa9c6
 }
 
 .mobile-theme-toggle {
-  display: none;
+  display: none
 }
 
-button#themeToggle,
-button#backToTop {
-  background: none;
-  border: none;
+button#backToTop,button#themeToggle {
+  background: 0 0;
+  border: 0;
   padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center
 }
 
 body.light-mode #themeToggle svg {
-  filter: brightness(0) saturate(100%) invert(0); /* make dark icon visible on white bg */
+  filter: brightness(0) saturate(100%) invert(0);
+  color: #121212
 }
 
 #themeToggle svg {
   width: 24px;
   height: 24px;
-  color: inherit;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: fadeInScale 0.3s ease forwards;
+  color: inherit
 }
 
-body.light-mode #themeToggle svg {
-  color: #121212;
-}
-
-#themeToggle:hover svg {
+#themeToggle:hover svg,body.light-mode #themeToggle:hover svg {
   filter: drop-shadow(0 0 6px #1fa9c6);
-  color: #1fa9c6;
-}
-
-body.light-mode #themeToggle:hover svg {
-  filter: drop-shadow(0 0 6px #1fa9c6);
-  color: #1fa9c6;
-}
-
-@keyframes fadeInScale {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  color: #1fa9c6
 }
 
 #upArrowIcon {
   width: 36px;
   height: 36px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform .2s ease,opacity .2s ease
 }
 
-.icon-anim {
+#themeToggle svg,.icon-anim {
   opacity: 0;
-  transform: scale(0.8);
-  animation: fadeInScale 0.3s ease forwards;
+  transform: scale(.8);
+  animation: fadeInScale .3s ease forwards
 }
 
-/* ============================================
-   📬 Contact Form Styles
-============================================ */
 .contact-form {
   margin: 2rem auto 1.5rem;
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1rem
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input,.contact-form textarea {
   background-color: #1e1e1e;
   border: 1px solid #444;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   border-radius: 6px;
   color: #f2f2f2;
   font-size: 1rem;
-  transition: border-color 0.2s ease;
-  font-family: 'Inter', sans-serif;
+  transition: border-color .2s ease;
+  font-family: "Inter",sans-serif
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form input:focus,.contact-form textarea:focus {
   border-color: #888;
-  outline: none;
+  outline: 0
 }
 
 .contact-form button {
   background-color: #333;
   color: #f2f2f2;
-  padding: 0.75rem 1rem;
-  border: none;
+  padding: .75rem 1rem;
+  border: 0;
   border-radius: 6px;
   font-weight: 500;
   font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  cursor: pointer
 }
 
 .contact-form button:hover {
-  background-color: #555;
+  background-color: #555
 }
 
 .footer p {
@@ -677,19 +670,16 @@ body.light-mode #themeToggle:hover svg {
   max-width: 600px;
   margin: 1rem auto 2rem;
   font-size: 1.1rem;
-  color: #ccc;
+  color: #ccc
 }
 
-/* ============================================
-   🔗 Footer Links
-============================================ */
 .footer-links {
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem
 }
 
 .footer-links a {
@@ -697,26 +687,22 @@ body.light-mode #themeToggle:hover svg {
   text-decoration: none;
   font-weight: 500;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease;
-  margin-bottom: 0rem;
+  transition: border-color .3s ease;
+  margin-bottom: 0
 }
 
 .footer-links a:hover {
-  border-color: #888;
+  border-color: #888
 }
 
-
-/* ============================================
-   🌗 Theme Toggle Button
-============================================ */
 .theme-toggle {
   margin-left: auto;
-  margin-right: 2rem;
+  margin-right: 2rem
 }
 
 .theme-toggle button {
-  background: none !important;
-  border: none;
+  background: 0 0!important;
+  border: 0;
   padding: 0;
   margin: 0;
   cursor: pointer;
@@ -725,705 +711,572 @@ body.light-mode #themeToggle:hover svg {
   transition: none;
   vertical-align: middle;
   position: relative;
-  top: 0.5px;  
+  top: .5px
 }
 
 .theme-toggle svg {
   color: inherit;
   filter: none;
   transform: scale(1);
-  transition: transform 0.4s ease, filter 0.3s ease, color 0.3s ease;
+  transition: transform .4s ease,filter .3s ease,color .3s ease
 }
 
 .theme-toggle button:hover svg {
   color: #1fa9c6;
   filter: drop-shadow(0 0 6px #1fa9c6);
-  transition: color 0.3s ease, filter 0.3s ease;
+  transition: color .3s ease,filter .3s ease
 }
 
-
-/* ============================================
-   🎨 Light Mode Theme Overrides
-============================================ */
 body.light-mode {
   background-color: #f2f2f2;
-  color: #121212;
+  color: #121212
 }
 
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode h3 {
-  color: #121212;
-}
-
-body.light-mode .hero .title,
-body.light-mode .hero .mission,
-body.light-mode .bio,
-body.light-mode .skill span,
-body.light-mode .focus p,
-body.light-mode .footer p,
-body.light-mode .footer a,
-body.light-mode .contact-form input::placeholder,
-body.light-mode .contact-form textarea::placeholder {
-  color: #333;
+body.light-mode .bio,body.light-mode .contact-form input::placeholder,body.light-mode .contact-form textarea::placeholder,body.light-mode .focus p,body.light-mode .footer a,body.light-mode .footer p,body.light-mode .hero .mission,body.light-mode .hero .title,body.light-mode .skill span {
+  color: #333
 }
 
 body.light-mode .navbar {
-  background-color: rgba(255, 255, 255, 0.85); /* soft white with fade */
+  background-color: rgba(255,255,255,.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-body.light-mode .navbar li a {
-  color: #121212;
+  border-bottom: 1px solid rgba(0,0,0,.05)
 }
 
 body.light-mode .filters button {
   background-color: #26e1fa;
-  color: #111;
+  color: #111
 }
 
 body.light-mode .filters button:hover {
-  background-color: #22c0d8;
+  background-color: #22c0d8
 }
 
 body.light-mode .filters button.active {
   background-color: #1fa9c6;
-  color: #fff;
+  color: #fff
 }
 
 body.light-mode .project-card {
   background: #fff;
   color: #121212;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0,0,0,.05)
 }
 
 body.light-mode .project-tech span {
-  background: #ddd;
+  background: #ddd
 }
 
-body.light-mode .contact-form input,
-body.light-mode .contact-form textarea {
-  background-color: #ffffff;
+body.light-mode .contact-form input,body.light-mode .contact-form textarea {
+  background-color: #fff;
   color: #121212;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc
 }
 
 body.light-mode .contact-form button {
   background-color: #ddd;
-  color: #121212;
+  color: #121212
 }
 
 body.light-mode .footer-links a {
-  color: #121212;
+  color: #121212
 }
 
-body.light-mode #themeToggleDesktop svg,
-body.light-mode #themeToggleMobile svg {
-  color: #121212;
+body:not(.light-mode) #themeToggleDesktop svg,body:not(.light-mode) #themeToggleMobile svg {
+  color: #f2f2f2
 }
 
-body:not(.light-mode) #themeToggleDesktop svg,
-body:not(.light-mode) #themeToggleMobile svg {
-  color: #f2f2f2;
+#backToTop,.spinner {
+  width: 40px;
+  height: 40px
 }
 
-
-/* ============================================
-   ⬆️ Back To Top Button
-============================================ */
-#backToTop {
+#backToTop,#loader {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+#backToTop {
   bottom: 30px;
   right: 30px;
   z-index: 99;
-  background: none;
-  border: none;
+  background: 0 0;
+  border: 0;
   padding: 0;
   box-shadow: none;
   color: inherit;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; /* optional: more clickable area */
-  height: 40px;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
+  transition: opacity .3s ease,transform .3s ease;
+  pointer-events: none
 }
-
 
 #backToTop.visible {
   opacity: 1;
   transform: translateY(0);
-  pointer-events: auto;
+  pointer-events: auto
 }
 
-
-#backToTop:hover {
-  background-color: none;
-}
-
-body.light-mode #backToTop {
-  background-color: none;
+#backToTop:hover,body.light-mode #backToTop {
+  background-color: none
 }
 
 body.light-mode #backToTop img {
-  filter: none; /* shows natural dark icon in light mode */
+  filter: none
 }
 
 #backToTop img {
   width: 48px;
   height: 48px;
   object-fit: contain;
-  filter: none;
+  filter: none
 }
 
-/* ============================================
-   ⏳ Page Loader
-============================================ */
 #loader {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: #121212;
   z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.5s ease, visibility 0.5s;
+  transition: opacity .5s ease,visibility .5s
 }
 
 .spinner {
-  width: 40px;
-  height: 40px;
   border: 4px solid #f2f2f2;
   border-top: 4px solid transparent;
   border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  animation: spin .8s linear infinite
 }
 
 body.loaded #loader {
   opacity: 0;
-  visibility: hidden;
+  visibility: hidden
 }
 
-
-/* ============================================
-   🎬 Entry Animations
-============================================ */
-.fade-in-section {
+.fade-in-section,.slide-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s ease-out;
+  transition: all .6s ease-out
 }
-.fade-in-section.visible {
+
+.fade-in-section.visible,.slide-up.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0)
 }
 
 .slide-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-out;
-}
-.slide-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateY(40px)
 }
 
 .zoom-in {
   opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.5s ease-out;
+  transform: scale(.95);
+  transition: all .5s ease-out
 }
+
 .zoom-in.visible {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1)
 }
 
-.stagger { transition-delay: 0.15s; }
-.stagger-2 { transition-delay: 0.3s; }
-.stagger-3 { transition-delay: 0.45s; }
+.stagger {
+  transition-delay: .15s
+}
 
+.stagger-2 {
+  transition-delay: .3s
+}
 
-/* ============================================
-   🔧 Tablet (≤ 1024px)
-============================================ */
-@media (max-width: 1024px) {
+.stagger-3 {
+  transition-delay: .45s
+}
+
+@media (max-width:1024px) {
   .project-card {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem
   }
 
   .project-description {
-    margin-right: 0;
-    text-align: center;
+      margin-right: 0;
+      text-align: center
   }
 
   .project-image img {
-    margin-top: 1rem;
+      margin-top: 1rem
   }
 
   .filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem
   }
 
   .filters button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
+      padding: .4rem .8rem;
+      font-size: .9rem
   }
 
   .project-tech span {
-    font-size: 0.8rem;
+      font-size: .8rem
   }
 }
 
-
-/* ============================================
-   📱 Mobile (≤ 768px)
-============================================ */
-@media (max-width: 768px) {
+@media (max-width:768px) {
   body {
-    padding: 1rem;
+      padding: 1rem
   }
 
   .navbar ul {
-    gap: 1rem;
-  }
-
-  .navbar li a {
-    font-size: 0.95rem;
+      gap: 1rem
   }
 
   .about-container {
-    padding: 1.5rem;
+      padding: 1.5rem
   }
 
   .hero .title {
-    font-size: 1rem;
+      font-size: 1rem
   }
 
-  .hero .mission {
-    font-size: 0.95rem;
+  .bio p,.focus p,.hero .mission,.navbar li a {
+      font-size: .95rem
   }
 
   .profile-pic {
-    width: 160px;
-    height: 160px;
+      width: 160px;
+      height: 160px
   }
 
   .skills-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+      display: flex!important;
+      flex-direction: row!important;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0
   }
 
   .skill i {
-    font-size: 2.5rem;
+      font-size: 2.5rem
   }
 
   .skill span {
-    font-size: 0.85rem;
+      font-size: .85rem
   }
-
-  .focus p,
-  .bio p {
-    font-size: 0.95rem;
-  }
-
-  
-
-  
 
   h3 {
-    font-size: 1.2rem;
+      font-size: 1.2rem
   }
 
   .project-card {
-    padding: 1rem;
+      padding: 1rem
   }
 
   .project-tech span {
-    font-size: 0.8rem;
+      font-size: .8rem
   }
 }
 
-
-/* ============================================
-   📳 Extra Small Devices (≤ 480px)
-============================================ */
-@media (max-width: 480px) {
+@media (max-width:480px) {
   .profile-pic {
-    width: 100px;
-    height: 100px;
+      width: 100px;
+      height: 100px
   }
 
   .project-image img {
-    max-width: 100%;
+      max-width: 100%
   }
 
-  .hero 
-
-  .skills-grid {
-    justify-content: space-around;
+  .hero .skills-grid {
+      justify-content: space-around
   }
 
   .skill {
-    width: 30%;
+      width: 30%
   }
 
   .skill i {
-    font-size: 2rem;
+      font-size: 2rem
   }
 
-  .focus h2,
-  .skills 
-
-  .project-image img {
-    height: auto;
+  .focus h2,.skills .project-image img {
+      height: auto
   }
 
   .project-card {
-    padding: 0.8rem;
+      padding: .8rem
   }
 
   .project-description p {
-    font-size: 0.9rem;
+      font-size: .9rem
   }
 
   h3 {
-    font-size: 1.1rem;
+      font-size: 1.1rem
   }
 
   .project-tech span {
-    padding: 0.2rem 0.5rem;
+      padding: .2rem .5rem
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .navbar {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100% !important;
-    z-index: 1002;
-    padding: 0.75rem 1rem;
-    background-color: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border: none !important;
-    box-shadow: none !important;
+      position: fixed!important;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%!important;
+      z-index: 1002;
+      padding: .75rem 1rem;
+      background-color: transparent!important;
+      backdrop-filter: none!important;
+      -webkit-backdrop-filter: none!important;
+      border: 0!important;
+      box-shadow: none!important
   }
 
   .nav-left {
-    display: none;
+      display: none
   }
 
   .nav-top-mobile {
-    background-color: transparent !important;
-    box-shadow: none;
-    border: none;
-    height: auto;
-    padding: 0.5rem 1rem; /* optional, can adjust */
-    min-height: unset;
+      background-color: transparent!important;
+      box-shadow: none;
+      border: 0;
+      height: auto;
+      padding: .5rem 1rem;
+      min-height: unset
   }
 
   .desktop-only {
-    display: none!important;
+      display: none!important
   }
 
-  .mobile-theme-toggle {
-    display: block;
+  .hamburger,.mobile-theme-toggle {
+      display: block
   }
 
   .hamburger {
-    display: block;
-    margin-left: 1rem;
+      margin-left: 1rem
   }
 
   .theme-toggle {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0
   }
 
   .nav-right {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    height: calc(100vh - 60px);
-    width: 250px;
-    background-color: rgba(12, 12, 12, 0.95);
-    backdrop-filter: blur(8px);
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    overflow-y: auto;
-    transition: left 0.3s ease;
-    z-index: 1000;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: calc(100vh - 60px);
+      width: 250px;
+      background-color: rgba(12,12,12,.95);
+      backdrop-filter: blur(8px);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      overflow-y: auto;
+      transition: left .3s ease;
+      z-index: 1000
   }
 
-  .nav-right li {
-    display: flex;
-    align-items: center;
+  .nav-right li,.nav-right li a {
+      display: flex;
+      align-items: center
   }
 
   .nav-right li a {
-    display: flex;
-    align-items: center;       /* ✅ Ensures link text is vertically centered */
-    height: 100%;              /* Optional: stretch to nav height */
+      height: 100%
   }
 
   .nav-right.active {
-    left: 0;
+      left: 0
   }
 }
-/* === Clean and Centered Headings === */
-h1 {
+
+h1,h2 {
   text-align: center;
+  color: var(--text-color);
+  display: inline-block
+}
+
+h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--text-color);
   margin-top: 5rem;
   margin-bottom: 2rem;
   border-bottom: 3px solid var(--accent-color);
-  display: inline-block;
-  padding-bottom: 0.4rem;
+  padding-bottom: .4rem
 }
 
 h2 {
-  text-align: center;
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--text-color);
   margin-top: 3rem;
-  margin-bottom: 1rem;
   border-bottom: 2px solid var(--accent-color);
-  display: inline-block;
-  padding-bottom: 0.3rem;
+  padding-bottom: .3rem
 }
 
-/* === Fade In Heading Animation === */
 .fade-in-heading {
-  animation: fadeInUp 0.8s ease-out both;
+  animation: fadeInUp .8s ease-out both
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === Horizontal Skills Category Rows === */
 .skills-category {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem
 }
 
-.skills-category h2 {
-  margin-bottom: 1rem;
+.skills-category h2,h2 {
+  margin-bottom: 1rem
 }
 
 .skills-category .skills-grid {
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.5rem
 }
 
-/* === Up Arrow Spark-Glow Effect === */
 #backToTop:hover svg {
   color: #1fa9c6;
-  filter: drop-shadow(0 0 6px #1fa9c6);
+  filter: drop-shadow(0 0 6px #1fa9c6)
 }
 
-#themeToggleDesktop svg,
-#themeToggleMobile svg {
+#themeToggleDesktop svg,#themeToggleMobile svg {
   color: #f2f2f2;
   stroke: currentColor;
-  transition: color 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  transition: color .3s ease,filter .3s ease,transform .3s ease
 }
 
-#themeToggleDesktop:hover svg,
-#themeToggleMobile:hover svg {
+#themeToggleDesktop:hover svg,#themeToggleMobile:hover svg {
   color: #1fa9c6;
   stroke: #1fa9c6;
   filter: drop-shadow(0 0 6px #1fa9c6);
-  transform: scale(1.1);
+  transform: scale(1.1)
 }
 
-#themeToggleDesktop,
-#themeToggleMobile {
-  background: none;
-  border: none;
+#themeToggleDesktop,#themeToggleMobile {
+  background: 0 0;
+  border: 0;
   box-shadow: none;
   padding: 0;
   margin: 0;
-  cursor: pointer;
+  cursor: pointer
 }
 
-body.light-mode #themeToggleDesktop svg,
-body.light-mode #themeToggleMobile svg {
-  color: #121212;
+body.light-mode #themeToggleDesktop svg,body.light-mode #themeToggleMobile svg {
+  color: #121212
 }
 
 .theme-toggle svg.theme-anim {
-  animation: pop 0.3s ease;
-}
-
-@keyframes pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.7); }
-  100% { transform: scale(1.1); }
+  animation: pop .3s ease
 }
 
 .theme-rotate {
-  animation: rotateIcon 0.4s ease;
+  animation: rotateIcon .4s ease
 }
 
-@keyframes rotateIcon {
-  0%   { transform: rotate(0deg) scale(0.6); }
-  50%  { transform: rotate(180deg) scale(1.2); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
-/* Reset for desktop */
-@media (min-width: 769px) {
+@media (min-width:769px) {
   .nav-right {
-    position: static;
-    transform: none;
-    opacity: 1;
-    flex-direction: row;
-    height: auto;
-    width: auto;
-    background: none;
-    backdrop-filter: none;
-    padding: 0;
-    animation: none !important;
-  } 
+      position: static;
+      transform: none;
+      opacity: 1;
+      flex-direction: row;
+      height: auto;
+      width: auto;
+      background: 0 0;
+      backdrop-filter: none;
+      padding: 0;
+      animation: none!important
+  }
 
   #navOverlay {
-    display: none;
+      display: none
   }
 }
 
 .mobile-close {
-  display: none;
+  display: none
 }
 
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .mobile-close {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding-top: 1.5rem;
-    animation: fadeSlideIn 0.3s ease-out;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-top: 1.5rem;
+      animation: fadeSlideIn .3s ease-out
   }
 
   .nav-right:not(.active) .mobile-close {
-    display: none;
+      display: none
   }
 
   .nav-right {
-    height: 100vh;
-    display: none;
+      height: 100vh;
+      display: none
   }
 
   .nav-right.active {
-    display: flex;
-    left: 0;
+      display: flex;
+      left: 0
   }
 }
 
 body.light-mode .nav-right {
-  background-color: #ffffff;
+  background-color: #fff
 }
 
-body.light-mode .hamburger,
-body.light-mode #closeMenu {
-  color: #121212; /* Dark text in light mode */
+body.light-mode #closeMenu,body.light-mode .hamburger {
+  color: #121212
 }
 
-body.light-mode .hamburger svg,
-body.light-mode #closeMenu svg {
+body.light-mode #closeMenu svg,body.light-mode .hamburger svg {
   stroke: #121212;
-  color: #121212;
+  color: #121212
 }
 
-body.light-mode .hamburger:hover,
-body.light-mode #closeMenu:hover {
-  color: #1fa9c6;
+body.light-mode #closeMenu:hover,body.light-mode .hamburger:hover {
+  color: #1fa9c6
 }
 
-body:not(.light-mode) .hamburger:hover,
-body:not(.light-mode) #closeMenu:hover {
-  color: #1fa9c6;
+body:not(.light-mode) #closeMenu:hover,body:not(.light-mode) .hamburger:hover {
+  color: #1fa9c6
 }
 
-body:not(.light-mode) .hamburger svg:hover,
-body:not(.light-mode) #closeMenu svg:hover {
+body:not(.light-mode) #closeMenu svg:hover,body:not(.light-mode) .hamburger svg:hover {
   stroke: #1fa9c6;
-  color: #1fa9c6;
+  color: #1fa9c6
 }
 
 body.light-mode .contact-form button:hover {
   background-color: #ccc;
   color: #000;
   transform: scale(1.02);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,.1)
 }
 
 .contact-form button {
-  transition: all 0.3s ease;
+  transition: all .3s ease
 }
 
 body:not(.light-mode) .contact-form button:hover {
   background-color: #444;
   color: #fff;
   transform: scale(1.02);
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
-}
-
-.contact-form button {
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255,255,255,.05)
 }
