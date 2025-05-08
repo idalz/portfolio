@@ -546,33 +546,63 @@
     }
 
     // === Mobile Nav: Close with Animation ===
-    function closeMobileNav() {
-      const nav = document.querySelector('.nav-right');
-      const overlay = document.querySelector('#navOverlay');
+    let justOpenedNav = false;
 
-      // Already closed
-      if (!document.body.classList.contains('nav-open')) return;
+    function openMobileNav() {
+      document.body.classList.add('nav-open');
+      const navRight = document.querySelector('.nav-right');
+      navRight.classList.add('active');
+      navRight.classList.remove('closing');
+      document.querySelector('#navOverlay').style.display = 'block';
 
-      // Add closing animation
-      nav.classList.add('closing');
-
-      // Hide overlay smoothly
-      overlay.style.opacity = '0';
-      overlay.style.visibility = 'hidden';
-
-      // Wait for animation to finish
+      justOpenedNav = true;
       setTimeout(() => {
-        nav.classList.remove('active', 'closing');
-        document.body.classList.remove('nav-open');
-        overlay.style.display = 'none';
-      }, 300); // Match your CSS animation duration
+        justOpenedNav = false;
+      }, 300);
     }
 
-    // === Event Listeners ===
-    document.querySelector('.hamburger').addEventListener('click', openMobileNav);
-    document.querySelector('#closeMenu').addEventListener('click', closeMobileNav);
+    function closeMobileNav() {
+      const navRight = document.querySelector('.nav-right');
+      const overlay = document.querySelector('#navOverlay');
 
-    // Close on outside click
+      navRight.classList.add('closing');
+      document.body.classList.remove('nav-open');
+
+      // Wait for animation to finish before cleanup
+      setTimeout(() => {
+        navRight.classList.remove('active');
+        navRight.classList.remove('closing');
+        overlay.style.display = 'none';
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+      }, 300); // Match your slideOutLeft CSS duration
+    }
+
+    // ✅ Open on hamburger click
+    document.querySelector('.hamburger').addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent bubbling to the body
+      openMobileNav();
+    });
+
+    // ✅ Close on resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMobileNav();
+      }
+    });
+
+    // ✅ Close on scroll, unless just opened
+    window.addEventListener('scroll', () => {
+      if (
+        window.innerWidth <= 768 &&
+        document.body.classList.contains('nav-open') &&
+        !justOpenedNav
+      ) {
+        closeMobileNav();
+      }
+    });
+
+    // ✅ Close on click outside nav
     document.addEventListener('click', (e) => {
       const nav = document.querySelector('.nav-right');
       const hamburger = document.querySelector('.hamburger');
@@ -587,20 +617,10 @@
       }
     });
 
-    // Close on scroll
-    window.addEventListener('scroll', () => {
-      if (window.innerWidth <= 768 && document.body.classList.contains('nav-open')) {
-        closeMobileNav();
-      }
+    // ✅ Close button (X)
+    document.querySelector('#closeMenu')?.addEventListener('click', () => {
+      closeMobileNav();
     });
-
-    // Close on resize to desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        closeMobileNav();
-      }
-    });
-
 
   </script>
  </body>

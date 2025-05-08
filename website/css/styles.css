@@ -689,6 +689,7 @@ body.light-mode #themeToggle:hover svg {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .footer-links a {
@@ -697,6 +698,7 @@ body.light-mode #themeToggle:hover svg {
   font-weight: 500;
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s ease;
+  margin-bottom: 0rem;
 }
 
 .footer-links a:hover {
@@ -1364,6 +1366,7 @@ body.light-mode #themeToggleMobile svg {
 
   .nav-right {
     height: 100vh;
+    display: none;
   }
 
   .nav-right.active {
@@ -1401,4 +1404,26 @@ body:not(.light-mode) .hamburger svg:hover,
 body:not(.light-mode) #closeMenu svg:hover {
   stroke: #1fa9c6;
   color: #1fa9c6;
+}
+
+body.light-mode .contact-form button:hover {
+  background-color: #ccc;
+  color: #000;
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+  transition: all 0.3s ease;
+}
+
+body:not(.light-mode) .contact-form button:hover {
+  background-color: #444;
+  color: #fff;
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+.contact-form button {
+  transition: all 0.3s ease;
 }
