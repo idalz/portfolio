@@ -988,8 +988,8 @@ body.loaded #loader {
 
 @media (max-width:480px) {
   .profile-pic {
-      width: 100px;
-      height: 100px
+      width: 120px;
+      height: 120px
   }
 
   .project-image img {
