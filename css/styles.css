@@ -314,7 +314,7 @@ h3 {
 .hero {
   text-align: center;
   margin-bottom: 2.5rem;
-  padding-top: 80px
+  padding-top: 40px
 }
 
 .profile-pic {
@@ -327,12 +327,14 @@ h3 {
 }
 
 .focus p,.hero .title {
-  font-size: 1.2rem;
-  color: #ccc
+  color: #ccc;
+  font-size: 1.5rem;  /* try 1.375rem or 1.5rem */
+  margin-top: 0rem;  /* reduce from default if needed */
+  font-weight: 600;
 }
 
 .hero .mission {
-  margin-top: .5rem;
+  margin-top: 1rem;
   color: #aaa;
   font-style: italic
 }
@@ -942,7 +944,7 @@ body.loaded #loader {
   }
 
   .hero .title {
-      font-size: 1rem
+      font-size: 1.25rem
   }
 
   .bio p,.focus p,.hero .mission,.navbar li a {
@@ -1279,4 +1281,11 @@ body:not(.light-mode) .contact-form button:hover {
   color: #fff;
   transform: scale(1.02);
   box-shadow: 0 2px 8px rgba(255,255,255,.05)
+}
+
+.about-text {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
 }
