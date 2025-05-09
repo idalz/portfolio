@@ -952,8 +952,8 @@ body.loaded #loader {
   }
 
   .profile-pic {
-      width: 160px;
-      height: 160px
+      width: 180px;
+      height: 180px
   }
 
   .skills-grid {
@@ -988,8 +988,8 @@ body.loaded #loader {
 
 @media (max-width:480px) {
   .profile-pic {
-      width: 120px;
-      height: 120px
+      width: 140px;
+      height: 140px
   }
 
   .project-image img {
