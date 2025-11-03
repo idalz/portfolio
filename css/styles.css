@@ -111,12 +111,57 @@
   }
 }
 
-*,body {
-  padding: 0
+/* ===== CSS Custom Properties ===== */
+:root {
+  /* Colors */
+  --bg-dark: #121212;
+  --bg-darker: #0c0c0c;
+  --bg-card: #1e1e1e;
+  --text-light: #f2f2f2;
+  --text-gray: #ccc;
+  --text-muted: #aaa;
+  --text-dark: #333;
+  --accent-primary: #1fa9c6;
+  --accent-hover: #26e1fa;
+  --accent-active: #0d5968;
+  --border-light: rgba(255,255,255,.08);
+  --border-dark: rgba(0,0,0,.05);
+  --shadow-light: rgba(255,255,255,.05);
+  --shadow-dark: rgba(0,0,0,.05);
+
+  /* Spacing */
+  --space-xs: .5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 2.5rem;
+
+  /* Transitions */
+  --transition-fast: .2s ease;
+  --transition-normal: .3s ease;
+  --transition-slow: .5s ease;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
 }
 
+body.light-mode {
+  --bg-dark: #f2f2f2;
+  --bg-darker: #fff;
+  --bg-card: #fff;
+  --text-light: #121212;
+  --text-gray: #333;
+  --text-muted: #333;
+  --border-light: rgba(0,0,0,.05);
+  --shadow-light: rgba(0,0,0,.05);
+}
+
+/* ===== Base Styles ===== */
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box
 }
 
@@ -125,8 +170,8 @@ html {
 }
 
 body {
-  background-color: #121212;
-  color: #f2f2f2;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   font-family: "Inter",sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -147,46 +192,62 @@ main {
   width: 100%
 }
 
-h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background-color: #888
+/* ===== Typography ===== */
+h1,h2,h3 {
+  color: var(--text-light)
 }
 
-.category.right h2::after {
-  left: auto
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 5rem;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  display: inline-block
+}
+
+/* Add underline only for main section titles */
+h1.section-title {
+  border-bottom: 3px solid var(--accent-primary);
+  padding-bottom: .4rem
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: var(--space-sm);
+  text-align: center;
+  display: inline-block
 }
 
 h3 {
   font-size: 1.3rem;
-  margin-bottom: .5rem
+  margin-bottom: var(--space-xs)
 }
 
+/* ===== Filters ===== */
 .filters {
   top: 0;
   background-color: transparent;
-  padding: 1rem 0;
+  padding: var(--space-sm) 0;
   z-index: 10;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: .5rem
+  gap: var(--space-xs)
 }
 
 .filters button {
   background-color: #168aa6;
   border: 0;
-  padding: .5rem 1rem;
+  padding: var(--space-xs) var(--space-sm);
   color: #fff;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin: .2rem;
   cursor: pointer;
-  transition: background-color .2s ease
+  transition: background-color var(--transition-fast)
 }
 
 .filters button:hover {
@@ -194,12 +255,13 @@ h3 {
 }
 
 .filters button.active {
-  background-color: #0d5968;
+  background-color: var(--accent-active);
   font-weight: 600
 }
 
+/* ===== Projects ===== */
 .category {
-  margin-bottom: 1rem
+  margin-bottom: var(--space-sm)
 }
 
 .category.left h2::after {
@@ -213,36 +275,27 @@ h3 {
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: 2 rem;
+  gap: 2rem;
   max-width: 900px;
-  margin: 0 auto
+  margin: 0 auto;
+  align-items: center
 }
 
 .project-list.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center
-}
-
-.project-list,.project-list.left,.project-list.right {
-  align-items: center
-}
-
-.centered {
   justify-content: center
 }
 
 .project-card {
-  background: #1e1e1e;
-  border-radius: 10px;
-  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  box-shadow: 0 0 10px rgba(255,255,255,.05);
+  box-shadow: 0 0 10px var(--shadow-light);
   width: 100%;
   max-width: 900px;
-  transition: transform .3s ease,box-shadow .3s ease;
+  transition: transform var(--transition-normal),box-shadow var(--transition-normal);
   min-height: 250px;
   cursor: pointer
 }
@@ -263,26 +316,26 @@ h3 {
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  margin-right: 2rem
+  margin-right: var(--space-lg)
 }
 
 .project-description p {
-  margin-top: .5rem;
-  margin-bottom: 1rem
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-sm)
 }
 
 .project-image img {
   width: 280px;
   height: 240px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
   display: block
 }
 
 .project-tech {
   margin-top: auto;
   display: flex;
-  gap: .5rem;
+  gap: var(--space-xs);
   flex-wrap: wrap
 }
 
@@ -305,15 +358,16 @@ h3 {
   animation: fadeOut .3s ease
 }
 
+/* ===== About / Hero Section ===== */
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem
+  padding: var(--space-lg)
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--space-xl);
   padding-top: 40px
 }
 
@@ -323,19 +377,19 @@ h3 {
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 0 12px rgba(255,255,255,.1);
-  margin-bottom: 1rem
+  margin-bottom: var(--space-sm)
 }
 
 .focus p,.hero .title {
-  color: #ccc;
-  font-size: 1.5rem;  /* try 1.375rem or 1.5rem */
-  margin-top: 0rem;  /* reduce from default if needed */
-  font-weight: 600;
+  color: var(--text-gray);
+  font-size: 1.5rem;
+  margin-top: 0;
+  font-weight: 600
 }
 
 .hero .mission {
-  margin-top: 1rem;
-  color: #aaa;
+  margin-top: var(--space-sm);
+  color: var(--text-muted);
   font-style: italic
 }
 
@@ -343,29 +397,30 @@ h3 {
   font-size: 1rem;
   color: #ddd;
   line-height: 1.8;
-  margin-bottom: 2.5rem
+  margin-bottom: var(--space-xl)
 }
 
 hr {
   border: 0;
-  border-top: 1px solid var(--accent-color);
-  margin: 2rem auto;
+  border-top: 1px solid var(--accent-primary);
+  margin: var(--space-lg) auto;
   width: 60%
 }
 
+/* ===== Skills Section ===== */
 .projects .skills h3 {
-  margin-top: 2rem;
+  margin-top: var(--space-lg);
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-color);
-  border-bottom: 2px solid var(--accent-color);
+  color: var(--text-light);
+  border-bottom: 2px solid var(--accent-primary);
   display: inline-block;
   padding-bottom: .25rem
 }
 
 .skills h2 {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: var(--space-lg);
   font-size: 1.4rem;
   font-weight: 600
 }
@@ -374,8 +429,8 @@ hr {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  margin: 1.5rem 0 3rem
+  gap: var(--space-md);
+  margin: var(--space-md) 0 3rem
 }
 
 .skill {
@@ -383,14 +438,14 @@ hr {
   width: 100px;
   opacity: 0;
   transform: translateY(20px);
-  transition: all .5s ease;
+  transition: all var(--transition-slow);
   flex: 0 1 100px
 }
 
 .skill i,.skill img {
   font-size: 2.5rem;
   height: 40px;
-  margin-bottom: .5rem
+  margin-bottom: var(--space-xs)
 }
 
 .focus p {
@@ -400,7 +455,7 @@ hr {
 
 .skill span {
   display: block;
-  margin-top: .5rem
+  margin-top: var(--space-xs)
 }
 
 .skills.visible .skill {
@@ -420,50 +475,70 @@ hr {
   transition-delay: .3s
 }
 
-.nav-left,.navbar {
-  display: flex;
-  align-items: center
-}
-
+/* ===== Navigation ===== */
 .navbar {
+  display: flex;
+  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
+  width: 100%;
   max-width: 100vw;
   background-color: rgba(12,12,12,.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  padding: .8rem 2rem;
+  border-bottom: 1px solid var(--border-light);
+  padding: .8rem var(--space-lg);
   box-sizing: border-box;
-  transition: background-color .3s ease,backdrop-filter .3s ease;
+  transition: background-color var(--transition-normal),backdrop-filter var(--transition-normal);
   justify-content: space-between
 }
 
 .navbar.shadow {
   box-shadow: 0 4px 12px rgba(0,0,0,.5);
-  transition: box-shadow .3s ease
+  transition: box-shadow var(--transition-normal)
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: var(--space-lg);
   padding: 0;
   margin: 0
 }
 
 .navbar li a {
-  color: #f2f2f2;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color .3s ease;
+  transition: color var(--transition-normal);
   position: relative
 }
 
-.navbar li a:hover,body.light-mode .navbar li a:hover {
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: .75rem
+}
+
+/* Utility: hover accent color */
+.hover-accent:hover,
+.navbar li a:hover,
+body.light-mode .navbar li a:hover,
+.icon:hover,
+body.light-mode .icon:hover,
+#themeToggle:hover svg,
+body.light-mode #themeToggle:hover svg,
+.theme-toggle button:hover svg,
+#backToTop:hover svg,
+#themeToggleDesktop:hover svg,
+#themeToggleMobile:hover svg,
+body.light-mode #closeMenu:hover,
+body.light-mode .hamburger:hover,
+body:not(.light-mode) #closeMenu:hover,
+body:not(.light-mode) .hamburger:hover {
   color: #1fa9c6
 }
 
@@ -478,7 +553,11 @@ hr {
   transition: width .3s ease
 }
 
-.navbar,.navbar li a:hover::after {
+.navbar {
+  width: 100%
+}
+
+.navbar li a:hover::after {
   width: 100%
 }
 
@@ -520,29 +599,34 @@ body.nav-open {
 }
 
 .brand-name {
-  color: #f2f2f2;
-  transition: color .3s ease;
+  color: var(--text-light);
+  transition: color var(--transition-normal);
   font-weight: 600;
   font-size: 1.1rem
 }
 
-body.light-mode .brand-name,body.light-mode .icon,body.light-mode .navbar li a,body.light-mode h1,body.light-mode h2,body.light-mode h3 {
-  color: #121212
+/* Light mode text colors consolidated - handled by CSS variables */
+body.light-mode .brand-name,
+body.light-mode .icon,
+body.light-mode .navbar li a {
+  color: var(--text-light)
 }
 
-.nav-right,.nav-right-wrapper {
+.nav-right-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.5rem
+  gap: var(--space-md)
 }
 
 .nav-right {
+  display: flex;
+  align-items: center;
   list-style: none;
-  gap: 2rem;
+  gap: var(--space-lg);
   margin: 0;
   padding: 0;
   transform: translateX(-100%);
-  transition: transform .3s ease,opacity .3s ease;
+  transition: transform var(--transition-normal),opacity var(--transition-normal);
   opacity: 0
 }
 
@@ -566,7 +650,7 @@ body.light-mode .brand-name,body.light-mode .icon,body.light-mode .navbar li a,b
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .3s ease
+  transition: opacity var(--transition-normal)
 }
 
 body.nav-open #navOverlay {
@@ -577,24 +661,28 @@ body.nav-open #navOverlay {
 .icon {
   width: 48px;
   height: 48px;
-  color: #f2f2f2;
-  transition: color .3s ease;
+  color: var(--text-light);
+  transition: color var(--transition-normal);
   cursor: pointer
 }
 
-.icon:hover,body.light-mode .icon:hover {
-  color: #1fa9c6
-}
+/* Removed - consolidated into .hover-accent utility above */
 
 .mobile-theme-toggle {
   display: none
 }
 
-button#backToTop,button#themeToggle {
+/* Utility class for button resets */
+.btn-reset {
   background: 0 0;
   border: 0;
   padding: 0;
+  margin: 0;
   cursor: pointer;
+  box-shadow: none
+}
+
+button#backToTop,button#themeToggle {
   display: flex;
   align-items: center;
   justify-content: center
@@ -611,9 +699,15 @@ body.light-mode #themeToggle svg {
   color: inherit
 }
 
-#themeToggle:hover svg,body.light-mode #themeToggle:hover svg {
-  filter: drop-shadow(0 0 6px #1fa9c6);
-  color: #1fa9c6
+/* Glow effect utility */
+.hover-glow:hover,
+#themeToggle:hover svg,
+body.light-mode #themeToggle:hover svg,
+.theme-toggle button:hover svg,
+#backToTop:hover svg,
+#themeToggleDesktop:hover svg,
+#themeToggleMobile:hover svg {
+  filter: drop-shadow(0 0 6px #1fa9c6)
 }
 
 #upArrowIcon {
@@ -628,73 +722,87 @@ body.light-mode #themeToggle svg {
   animation: fadeInScale .3s ease forwards
 }
 
+/* ===== Contact Form ===== */
 .contact-form {
-  margin: 2rem auto 1.5rem;
+  margin: var(--space-lg) auto var(--space-md);
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 1rem
+  gap: var(--space-sm)
 }
 
-.contact-form input,.contact-form textarea {
-  background-color: #1e1e1e;
+.contact-form input,
+.contact-form textarea {
+  background-color: var(--bg-card);
   border: 1px solid #444;
-  padding: .75rem 1rem;
-  border-radius: 6px;
-  color: #f2f2f2;
+  padding: .75rem var(--space-sm);
+  border-radius: var(--radius-md);
+  color: var(--text-light);
   font-size: 1rem;
-  transition: border-color .2s ease;
+  transition: border-color var(--transition-fast);
   font-family: "Inter",sans-serif
 }
 
-.contact-form input:focus,.contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   border-color: #888;
   outline: 0
 }
 
 .contact-form button {
   background-color: #333;
-  color: #f2f2f2;
-  padding: .75rem 1rem;
+  color: var(--text-light);
+  padding: .75rem var(--space-sm);
   border: 0;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   font-weight: 500;
   font-size: 1rem;
-  cursor: pointer
+  cursor: pointer;
+  transition: all var(--transition-normal)
 }
 
 .contact-form button:hover {
-  background-color: #555
+  background-color: var(--accent-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(31, 169, 198, 0.4)
 }
 
+/* ===== Footer ===== */
 .footer p {
   text-align: center;
   max-width: 600px;
-  margin: 1rem auto 2rem;
+  margin: var(--space-sm) auto var(--space-lg);
   font-size: 1.1rem;
-  color: #ccc
+  color: var(--text-gray)
 }
 
 .footer-links {
-  margin-top: 1.5rem;
+  margin-top: var(--space-md);
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: var(--space-md);
   flex-wrap: wrap;
-  margin-bottom: 1rem
+  margin-bottom: var(--space-sm)
 }
 
 .footer-links a {
-  color: #f2f2f2;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   border-bottom: 1px solid transparent;
-  transition: border-color .3s ease;
+  transition: all var(--transition-normal);
   margin-bottom: 0
 }
 
 .footer-links a:hover {
-  border-color: #888
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary)
+}
+
+body.light-mode .footer-links a:hover {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary)
 }
 
 .theme-toggle {
@@ -704,11 +812,6 @@ body.light-mode #themeToggle svg {
 
 .theme-toggle button {
   background: 0 0!important;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  box-shadow: none;
   border-radius: 0;
   transition: none;
   vertical-align: middle;
@@ -723,30 +826,32 @@ body.light-mode #themeToggle svg {
   transition: transform .4s ease,filter .3s ease,color .3s ease
 }
 
-.theme-toggle button:hover svg {
-  color: #1fa9c6;
-  filter: drop-shadow(0 0 6px #1fa9c6);
-  transition: color .3s ease,filter .3s ease
-}
+/* Removed - consolidated into utilities above */
 
-body.light-mode {
-  background-color: #f2f2f2;
-  color: #121212
-}
+/* ===== Light Mode Overrides ===== */
+/* Most colors now handled by CSS variables at top */
 
-body.light-mode .bio,body.light-mode .contact-form input::placeholder,body.light-mode .contact-form textarea::placeholder,body.light-mode .focus p,body.light-mode .footer a,body.light-mode .footer p,body.light-mode .hero .mission,body.light-mode .hero .title,body.light-mode .skill span {
-  color: #333
+body.light-mode .bio,
+body.light-mode .contact-form input::placeholder,
+body.light-mode .contact-form textarea::placeholder,
+body.light-mode .focus p,
+body.light-mode .footer a,
+body.light-mode .footer p,
+body.light-mode .hero .mission,
+body.light-mode .hero .title,
+body.light-mode .skill span {
+  color: var(--text-gray)
 }
 
 body.light-mode .navbar {
   background-color: rgba(255,255,255,.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(0,0,0,.05)
+  border-bottom: 1px solid var(--border-light)
 }
 
 body.light-mode .filters button {
-  background-color: #26e1fa;
+  background-color: var(--accent-hover);
   color: #111
 }
 
@@ -755,33 +860,28 @@ body.light-mode .filters button:hover {
 }
 
 body.light-mode .filters button.active {
-  background-color: #1fa9c6;
+  background-color: var(--accent-primary);
   color: #fff
-}
-
-body.light-mode .project-card {
-  background: #fff;
-  color: #121212;
-  box-shadow: 0 0 10px rgba(0,0,0,.05)
 }
 
 body.light-mode .project-tech span {
   background: #ddd
 }
 
-body.light-mode .contact-form input,body.light-mode .contact-form textarea {
-  background-color: #fff;
-  color: #121212;
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
   border: 1px solid #ccc
 }
 
 body.light-mode .contact-form button {
-  background-color: #ddd;
-  color: #121212
+  background-color: #ddd
 }
 
-body.light-mode .footer-links a {
-  color: #121212
+body.light-mode .contact-form button:hover {
+  background-color: var(--accent-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(31, 169, 198, 0.4)
 }
 
 body:not(.light-mode) #themeToggleDesktop svg,body:not(.light-mode) #themeToggleMobile svg {
@@ -859,25 +959,50 @@ body.loaded #loader {
   visibility: hidden
 }
 
-.fade-in-section,.slide-up {
+/* ===== Utility Classes ===== */
+.text-center {
+  text-align: center
+}
+
+.mb-3 {
+  margin-bottom: 3rem
+}
+
+.mt-1-5 {
+  margin-top: 1.5rem
+}
+
+.mb-0 {
+  margin-bottom: 0
+}
+
+.mb-2-5 {
+  margin-bottom: 2.5rem
+}
+
+/* ===== Animation Classes ===== */
+.fade-in-section {
   opacity: 0;
   transform: translateY(30px);
   transition: all .6s ease-out
 }
 
-.fade-in-section.visible,.slide-up.visible {
-  opacity: 1;
-  transform: translateY(0)
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .6s ease-out
 }
 
-.slide-up {
-  transform: translateY(40px)
+.fade-in-section.visible,
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0)
 }
 
 .zoom-in {
   opacity: 0;
   transform: scale(.95);
-  transition: all .5s ease-out
+  transition: all var(--transition-slow)
 }
 
 .zoom-in.visible {
@@ -897,11 +1022,12 @@ body.loaded #loader {
   transition-delay: .45s
 }
 
+/* ===== Media Queries ===== */
 @media (max-width:1024px) {
   .project-card {
       flex-direction: column;
       align-items: center;
-      padding: 1rem
+      padding: var(--space-sm)
   }
 
   .project-description {
@@ -910,14 +1036,7 @@ body.loaded #loader {
   }
 
   .project-image img {
-      margin-top: 1rem
-  }
-
-  .filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: .5rem
+      margin-top: var(--space-sm)
   }
 
   .filters button {
@@ -932,15 +1051,15 @@ body.loaded #loader {
 
 @media (max-width:768px) {
   body {
-      padding: 1rem
+      padding: var(--space-sm)
   }
 
   .navbar ul {
-      gap: 1rem
+      gap: var(--space-sm)
   }
 
   .about-container {
-      padding: 1.5rem
+      padding: var(--space-md)
   }
 
   .hero .title {
@@ -961,8 +1080,8 @@ body.loaded #loader {
       flex-direction: row!important;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
-      margin: 1.5rem 0
+      gap: var(--space-md);
+      margin: var(--space-md) 0
   }
 
   .skill i {
@@ -978,7 +1097,7 @@ body.loaded #loader {
   }
 
   .project-card {
-      padding: 1rem
+      padding: var(--space-sm)
   }
 
   .project-tech span {
@@ -1108,79 +1227,38 @@ body.loaded #loader {
   }
 }
 
-h1,h2 {
-  text-align: center;
-  color: var(--text-color);
-  display: inline-block
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  border-bottom: 3px solid var(--accent-color);
-  padding-bottom: .4rem
-}
-
-h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-top: 3rem;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: .3rem
-}
+/* Duplicate h1/h2 rules removed - already defined in Typography section */
 
 .fade-in-heading {
   animation: fadeInUp .8s ease-out both
 }
 
+/* ===== Skills Category ===== */
 .skills-category {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem
-}
-
-.skills-category h2,h2 {
-  margin-bottom: 1rem
+  margin-bottom: var(--space-lg)
 }
 
 .skills-category .skills-grid {
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem
+  gap: var(--space-md)
 }
 
-#backToTop:hover svg {
-  color: #1fa9c6;
-  filter: drop-shadow(0 0 6px #1fa9c6)
-}
-
-#themeToggleDesktop svg,#themeToggleMobile svg {
-  color: #f2f2f2;
+/* ===== Theme Toggle Animations ===== */
+#themeToggleDesktop svg,
+#themeToggleMobile svg {
+  color: var(--text-light);
   stroke: currentColor;
-  transition: color .3s ease,filter .3s ease,transform .3s ease
+  transition: color var(--transition-normal),filter var(--transition-normal),transform var(--transition-normal)
 }
 
-#themeToggleDesktop:hover svg,#themeToggleMobile:hover svg {
-  color: #1fa9c6;
-  stroke: #1fa9c6;
-  filter: drop-shadow(0 0 6px #1fa9c6);
+#themeToggleDesktop:hover svg,
+#themeToggleMobile:hover svg {
+  stroke: var(--accent-primary);
   transform: scale(1.1)
-}
-
-#themeToggleDesktop,#themeToggleMobile {
-  background: 0 0;
-  border: 0;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer
-}
-
-body.light-mode #themeToggleDesktop svg,body.light-mode #themeToggleMobile svg {
-  color: #121212
 }
 
 .theme-toggle svg.theme-anim {
@@ -1252,36 +1330,13 @@ body.light-mode #closeMenu svg,body.light-mode .hamburger svg {
   color: #121212
 }
 
-body.light-mode #closeMenu:hover,body.light-mode .hamburger:hover {
-  color: #1fa9c6
-}
-
-body:not(.light-mode) #closeMenu:hover,body:not(.light-mode) .hamburger:hover {
-  color: #1fa9c6
-}
+/* Removed - consolidated into .hover-accent utility above */
 
 body:not(.light-mode) #closeMenu svg:hover,body:not(.light-mode) .hamburger svg:hover {
-  stroke: #1fa9c6;
-  color: #1fa9c6
+  stroke: #1fa9c6
 }
 
-body.light-mode .contact-form button:hover {
-  background-color: #ccc;
-  color: #000;
-  transform: scale(1.02);
-  box-shadow: 0 2px 8px rgba(0,0,0,.1)
-}
-
-.contact-form button {
-  transition: all .3s ease
-}
-
-body:not(.light-mode) .contact-form button:hover {
-  background-color: #444;
-  color: #fff;
-  transform: scale(1.02);
-  box-shadow: 0 2px 8px rgba(255,255,255,.05)
-}
+/* Removed duplicate button hover styles - using electric blue hover from line 764 */
 
 .about-text {
   max-width: 750px;

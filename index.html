@@ -60,9 +60,7 @@
     <div class="nav-right-wrapper">
       <ul class="nav-right" id="navMenu">
         <li class="mobile-close">
-          <div class="mobile-close">
-            <button id="closeMenu">✕</button>
-          </div>
+          <button id="closeMenu">✕</button>
         </li>
         <li><a href="#hero">Home</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -71,7 +69,7 @@
     
         <!-- Mobile theme toggle (only visible on small screens) -->
         <li class="mobile-theme-toggle">
-          <button id="themeToggleMobile" aria-label="Toggle light/dark theme">
+          <button id="themeToggleMobile" class="btn-reset" aria-label="Toggle light/dark theme">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
             </svg>
@@ -81,7 +79,7 @@
     
       <!-- Desktop theme toggle -->
       <div class="theme-toggle desktop-only">
-        <button id="themeToggleDesktop" aria-label="Toggle light/dark theme">
+        <button id="themeToggleDesktop" class="btn-reset" aria-label="Toggle light/dark theme">
           <svg xmlns="http://www.w3.org/2000/svg" id="themeIcon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
@@ -98,10 +96,10 @@
    <!-- About Section -->
 <section class="hero fade-in-section hidden" id="hero">
   <img alt="Yannis Profile" class="profile-pic" src="icons/profile.webp" width="260" height="260" />
-  <div style="text-align: center;"><h1 class="fade-in-heading" style="margin-top: 1.5rem; margin-bottom: 0rem;">Yannis Dalezios</h1></div>
+  <div class="text-center"><h1 class="fade-in-heading mt-1-5 mb-0">Yannis Dalezios</h1></div>
   <div class="about-text">
     <p class="title">AI Engineer</p>
-    <p class="mission" style="margin-bottom: 2.5rem;">
+    <p class="mission mb-2-5">
       Specializing in AI-powered applications, machine learning solutions, and full-stack development.
     </p>
 
@@ -133,45 +131,37 @@
 
 <!-- Skills Section -->
 <section class="skills zoom-in hidden" id="skills">
-  <div style="text-align: center;"><h1 class="fade-in-heading">My Core Tools</h1></div>
+  <div class="text-center"><h1 class="fade-in-heading section-title">My Core Stack</h1></div>
 
-  <!-- Languages -->
-  <div style="text-align: center;"><h2 class="fade-in-heading">Languages</h2></div>
+  <!-- App Development -->
+  <div class="text-center"><h2 class="fade-in-heading">App Development</h2></div>
   <div class="skills-grid">
     <div class="skill"><img id="python-icon" alt="Python" src="icons/Python.svg" width="40" height="40" /><span>Python</span></div>
-    <div class="skill"><img id="javascript-icon" alt="JavaScript" src="icons/Javascript.svg" width="40" height="40" /><span>JavaScript</span></div>
-    <div class="skill"><img id="html-icon" alt="HTML" src="icons/HTML.svg" width="40" height="40" /><span>HTML</span></div>
-    <div class="skill"><img id="css-icon" alt="CSS" src="icons/CSS.svg" width="40" height="40" /><span>CSS</span></div>
-  </div>
-
-  <!-- Frameworks & Libraries -->
-  <div style="text-align: center;"><h2 class="fade-in-heading">Frameworks &amp; Libraries</h2></div>
-  <div class="skills-grid">
     <div class="skill"><img id="fastapi-icon" alt="FastAPI" src="icons/FastAPI.svg" width="40" height="40" /><span>FastAPI</span></div>
-    <div class="skill"><img id="streamlit-icon" alt="Streamlit" src="icons/Streamlit.svg" width="40" height="40" /><span>Streamlit</span></div>
-    <div class="skill"><img id="langchain-icon" alt="LangChain" src="icons/LangChain.svg" width="40" height="40" /><span>LangChain</span></div>
-    <div class="skill"><img id="openai-icon" alt="OpenAI" src="icons/OpenAI-white.svg" width="40" height="40"/><span>OpenAI</span></div>
-    <div class="skill"><img id="pytorch-icon" alt="PyTorch" src="icons/PyTorch.svg" width="40" height="40" /><span>PyTorch</span></div>
-    <div class="skill"><img id="sklearn-icon" alt="scikit-learn" src="icons/Scikit-Learn.svg" width="40" height="40" /><span>scikit-learn</span></div>
-    <div class="skill"><img id="pandas-icon" alt="Pandas" src="icons/Pandas.svg" width="40" height="40" /><span>Pandas</span></div>
-    <div class="skill"><img id="numpy-icon" alt="NumPy" src="icons/NumPy.svg" width="40" height="40" /><span>NumPy</span></div>
+    <div class="skill"><img id="openai-icon" alt="OpenAI" src="icons/OpenAI-white.svg" width="40" height="40"/><span>OpenAI API</span></div>
   </div>
 
-  <!-- Tools & Infrastructure -->
-  <div style="text-align: center;"><h2 class="fade-in-heading">Tools &amp; Infrastructure</h2></div>
+  <!-- Data Storage -->
+  <div class="text-center"><h2 class="fade-in-heading">Data Storage</h2></div>
   <div class="skills-grid">
     <div class="skill"><img id="postgresql-icon" alt="PostgreSQL" src="icons/PostgreSQL.svg" width="40" height="40" /><span>PostgreSQL</span></div>
-    <div class="skill"><img id="redis-icon" alt="Redis" src="icons/Redis.svg" width="40" height="40" /><span>Redis</span></div>
     <div class="skill"><img id="pinecone-icon" alt="Pinecone" src="icons/Pinecone-white.svg" width="100" height="40" /><span>Pinecone</span></div>
-    <div class="skill"><img id="docker-icon" alt="Docker" src="icons/Docker.svg" width="40" height="40" /><span>Docker</span></div>
-    <div class="skill"><img id="git-icon" alt="Git" src="icons/Git.svg" width="40" height="40" /><span>Git</span></div>
+    <div class="skill"><img id="redis-icon" alt="Redis" src="icons/Redis.svg" width="40" height="40" /><span>Redis</span></div>
+  </div>
+
+  <!-- ML/DL Systems -->
+  <div class="text-center"><h2 class="fade-in-heading">ML/DL Systems</h2></div>
+  <div class="skills-grid">
+    <div class="skill"><img id="pytorch-icon" alt="PyTorch" src="icons/PyTorch.svg" width="40" height="40" /><span>PyTorch</span></div>
+    <div class="skill"><img id="sklearn-icon" alt="scikit-learn" src="icons/Scikit-Learn.svg" width="40" height="40" /><span>scikit-learn</span></div>
+    <div class="skill"><img id="numpy-icon" alt="NumPy" src="icons/NumPy.svg" width="40" height="40" /><span>NumPy</span></div>
   </div>
 </section>
 
    <!-- Projects Section -->
    <section id="projects">
-    <div style="text-align: center;">
-     <h1 class="fade-in-heading">
+    <div class="text-center">
+     <h1 class="fade-in-heading section-title">
       My projects
      </h1>
     </div>
@@ -188,9 +178,9 @@
 
     <!-- AI & LLM -->
 <section class="category slide-up hidden stagger" data-category="ai">
-  <div style="text-align: center;"><h2 class="fade-in-heading">AI &amp; LLM</h2></div>
+  <div class="text-center"><h2 class="fade-in-heading">AI &amp; LLM</h2></div>
   <div class="project-list centered">
-    <div class="project-card" data-url="https://github.com/idalz/ai-powered-job-app-assistant" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/ai-powered-job-app-assistant">
       <div class="project-description">
         <h3>AI-Powered Job Application Assistant</h3>
         <p>An AI-driven assistant built with Langchain, OpenAI, Pinecone, FastAPI, PostgreSQL and Streamlit. Users can create profiles, extract key details from job descriptions and resumes, evaluate their compatibility with specific jobs, and generate personalized cover letters. Recruiters can find ideal candidates in a single click using the power of RAG.</p>
@@ -198,7 +188,7 @@
       </div>
       <div class="project-image"><img alt="AI-Powered Job Application Assistant" src="project-pics/ai-job-app.webp" width="250" height="150" loading="lazy" /></div>
     </div>
-    <div class="project-card" data-url="https://github.com/idalz/multi-source-rag-app" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/multi-source-rag-app">
       <div class="project-description">
         <h3>Multi-Source RAG App</h3>
         <p>An intelligent question-answering app using LangChain agents with OpenAI, Pinecone, and Streamlit. Users can upload their own documents (PDF) and ask any question. The agent provides an answer based on the document or falls back to Arxiv and Wikipedia.</p>
@@ -206,7 +196,7 @@
       </div>
       <div class="project-image"><img alt="Multi-Source RAG App" src="project-pics/ai-rag-qa.webp" width="250" height="150" loading="lazy" /></div>
     </div>
-    <div class="project-card" data-url="https://github.com/idalz/ai-chatbot-with-memory" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/ai-chatbot-with-memory">
       <div class="project-description">
         <h3>AI Chatbot with Memory</h3>
         <p>A full-stack application built with FastAPI, OpenAI, LangChain and FAISS. Each user has a unique session ID, enabling personalized and memory-aware conversations that persist across messages during the session.</p>
@@ -219,9 +209,9 @@
 
     <!-- Software Engineering -->
 <section class="category slide-up hidden stagger-2" data-category="software">
-  <div style="text-align: center;"><h2 class="fade-in-heading">Software Engineering</h2></div>
-  <div class="project-list centered ">
-    <div class="project-card" data-url="https://github.com/idalz/task-manager-web-app" style="margin-bottom: 3rem;">
+  <div class="text-center"><h2 class="fade-in-heading">Software Engineering</h2></div>
+  <div class="project-list centered">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/task-manager-web-app">
       <div class="project-description">
         <h3>Task Manager Web App</h3>
         <p>A full-stack task manager app with FastAPI, PostgreSQL and JWT-based user authentication. Users can create their account and safely manage their tasks. Includes CRUD operations, task filtering, sorting and searching.</p>
@@ -229,7 +219,7 @@
       </div>
       <div class="project-image"><img alt="Task Manager Web App" src="project-pics/se-task-manager.webp" width="250" height="150" loading="lazy" /></div>
     </div>
-    <div class="project-card" data-url="https://github.com/idalz/realtime-chat-app" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/realtime-chat-app">
       <div class="project-description">
         <h3>Real-Time Chat App</h3>
         <p>A real-time chat platform using FastAPI, PostgreSQL, JWT-based user authentication, WebSockets, and Redis for pub/sub messaging. Users can create their account and join public rooms or send DMs to others in real time.</p>
@@ -237,7 +227,7 @@
       </div>
       <div class="project-image"><img alt="Real-Time Chat App" src="project-pics/se-chat-app.webp" width="250" height="150" loading="lazy" /></div>
     </div>
-    <div class="project-card" data-url="https://github.com/idalz/job-board-app" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/job-board-app">
       <div class="project-description">
         <h3>Job Board App</h3>
         <p>A full-stack job board aggregator with FastAPI, PostgreSQL and BeautifulSoup. Users can search dev jobs by tags and keywords (scraped from different sources). Includes token-based access for admin to manage or scrape jobs.</p>
@@ -250,9 +240,9 @@
 
     <!-- Deep Learning -->
 <section class="category slide-up hidden stagger-3" data-category="dl">
-  <div style="text-align: center;"><h2 class="fade-in-heading">Deep Learning</h2></div>
+  <div class="text-center"><h2 class="fade-in-heading">Deep Learning</h2></div>
   <div class="project-list centered">
-    <div class="project-card" data-url="https://github.com/idalz/car-price-prediction" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/car-price-prediction">
       <div class="project-description">
         <h3>Car Price Prediction</h3>
         <p>An end-to-end car price prediction system using a neural network in PyTorch and Flask for the web app. Users can enter features of a car and get a predicted price as output.</p>
@@ -265,9 +255,9 @@
 
     <!-- Machine Learning -->
 <section class="category slide-up hidden" data-category="ml">
-  <div style="text-align: center;"><h2 class="fade-in-heading">Machine Learning</h2></div>
+  <div class="text-center"><h2 class="fade-in-heading">Machine Learning</h2></div>
   <div class="project-list centered">
-    <div class="project-card" data-url="https://github.com/idalz/mobile-price-classification" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/mobile-price-classification">
       <div class="project-description">
         <h3>Mobile Price Classification</h3>
         <p>An end-to-end machine learning pipeline to classify mobile phones into price categories using scikit-learn models and FastAPI. Users can enter the specs of a mobile and expect a predicted price category as an output.</p>
@@ -275,10 +265,10 @@
       </div>
       <div class="project-image"><img alt="Mobile Price Classification" src="project-pics/ml-mobile.webp" width="250" height="150" loading="lazy" /></div>
     </div>
-    <div class="project-card" data-url="https://github.com/idalz/jpn-hostel-price-prediction" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/jpn-hostel-price-prediction">
       <div class="project-description">
         <h3>Japan's Hostels Price Prediction</h3>
-        <p>A Flask-based web app to predict hostel prices in Japan using CatBoost. Users can enter their preferences to find the expected cost of the hostel they’d like to rent.</p>
+        <p>A Flask-based web app to predict hostel prices in Japan using CatBoost. Users can enter their preferences to find the expected cost of the hostel they'd like to rent.</p>
         <div class="project-tech"><span>CatBoost</span><span>Flask</span><span>Docker</span><span>GitHub Actions</span><span>Heroku</span></div>
       </div>
       <div class="project-image"><img alt="Japan's Hostels Price Prediction" src="project-pics/ml-japan-hostel.webp" width="250" height="150" loading="lazy" /></div>
@@ -288,9 +278,9 @@
 
    <!-- Data Science & Analytics -->
 <section class="category slide-up hidden" data-category="data">
-  <div style="text-align: center;"><h2 class="fade-in-heading">Data Science &amp; Analytics</h2></div>
+  <div class="text-center"><h2 class="fade-in-heading">Data Science &amp; Analytics</h2></div>
   <div class="project-list centered">
-    <div class="project-card" data-url="https://github.com/idalz/jupyter-notebooks-collection" style="margin-bottom: 3rem;">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/jupyter-notebooks-collection">
       <div class="project-description">
         <h3>Jupyter Notebooks Collection</h3>
         <p>A collection of data science Jupyter notebooks showcasing various data and model related tasks on different datasets.</p>
@@ -303,9 +293,9 @@
 
    <!-- Contact Section -->
    <section class="footer zoom-in hidden" id="contact">
-    <div style="text-align: center;">
-     <h1 class="fade-in-heading">
-      Let’s Connect
+    <div class="text-center">
+     <h1 class="fade-in-heading section-title">
+      Let's Connect
      </h1>
     </div>
     <p>
@@ -336,7 +326,7 @@
   </main>
 
   <!-- Back to Top Button -->
-  <button id="backToTop" title="Go to top">
+  <button id="backToTop" class="btn-reset" title="Go to top">
    <svg alt="Go to top" class="lucide lucide-circle-arrow-up-icon lucide-circle-arrow-up" fill="none" height="36" id="upArrowIcon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
     <circle cx="12" cy="12" r="10">
     </circle>
@@ -455,13 +445,12 @@
         }
 
         // Animate Back to Top
-        const backToTopBtn = document.getElementById('backToTop');
-        if (backToTopBtn) {
-          const newArrow = backToTopBtn.querySelector('svg');
-          newArrow.classList.add('icon-anim');
-          void newArrow.offsetWidth;
-          newArrow.classList.remove('icon-anim');
-          newArrow.classList.add('icon-anim');
+        const backToTopSvg = document.querySelector('#backToTop svg');
+        if (backToTopSvg) {
+          backToTopSvg.classList.add('icon-anim');
+          void backToTopSvg.offsetWidth;
+          backToTopSvg.classList.remove('icon-anim');
+          backToTopSvg.classList.add('icon-anim');
         }
       }
 
@@ -471,6 +460,7 @@
       } else {
         setTheme(false); // ensure dark is initialized properly
       }
+
       const backToTopBtn = document.getElementById("backToTop");
       window.addEventListener("scroll", () => {
         const navbar = document.querySelector(".navbar");
@@ -520,65 +510,20 @@
         }
       });
     });
-    
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
 
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-    
-    const closeMenuBtn = document.getElementById('closeMenu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.add('active');
-      navMenu.classList.remove('closing');
-      document.body.classList.add('nav-open');
-    });
-
-    closeMenuBtn.addEventListener('click', () => {
-      navMenu.classList.add('closing');
-      navMenu.classList.remove('active');
-      setTimeout(() => {
-        navMenu.classList.remove('closing');
-        document.body.classList.remove('nav-open');
-      }, 300); // Match the slideOutLeft duration
-    });
-
-    // Optional: close menu on link click
-    document.querySelectorAll('#navMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.add('closing');
-        navMenu.classList.remove('active');
-        setTimeout(() => {
-          navMenu.classList.remove('closing');
-          document.body.classList.remove('nav-open');
-        }, 300);
-      });
-    });
-
-    // === Mobile Nav: Open ===
-    function openMobileNav() {
-      const nav = document.querySelector('.nav-right');
-      const overlay = document.querySelector('#navOverlay');
-
-      nav.classList.add('active');
-      document.body.classList.add('nav-open');
-
-      overlay.style.display = 'block';
-      overlay.style.opacity = '1';
-      overlay.style.visibility = 'visible';
-    }
-
-    // === Mobile Nav: Close with Animation ===
+    // === Mobile Nav Functions ===
     let justOpenedNav = false;
 
     function openMobileNav() {
       document.body.classList.add('nav-open');
       const navRight = document.querySelector('.nav-right');
+      const overlay = document.querySelector('#navOverlay');
+
       navRight.classList.add('active');
       navRight.classList.remove('closing');
-      document.querySelector('#navOverlay').style.display = 'block';
+      overlay.style.display = 'block';
+      overlay.style.opacity = '1';
+      overlay.style.visibility = 'visible';
 
       justOpenedNav = true;
       setTimeout(() => {
@@ -593,20 +538,31 @@
       navRight.classList.add('closing');
       document.body.classList.remove('nav-open');
 
-      // Wait for animation to finish before cleanup
       setTimeout(() => {
         navRight.classList.remove('active');
         navRight.classList.remove('closing');
         overlay.style.display = 'none';
         overlay.style.opacity = '0';
         overlay.style.visibility = 'hidden';
-      }, 300); // Match your slideOutLeft CSS duration
+      }, 300);
     }
 
     // Open on hamburger click
     document.querySelector('.hamburger').addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent bubbling to the body
+      e.stopPropagation();
       openMobileNav();
+    });
+
+    // Close button
+    document.querySelector('#closeMenu')?.addEventListener('click', () => {
+      closeMobileNav();
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileNav();
+      });
     });
 
     // Close on resize to desktop
@@ -640,11 +596,6 @@
       ) {
         closeMobileNav();
       }
-    });
-
-    // Close button (X)
-    document.querySelector('#closeMenu')?.addEventListener('click', () => {
-      closeMobileNav();
     });
 
   </script>
