@@ -18,4 +18,3 @@ It showcases my projects, skills, and background as an AI Engineer & Full-Stack 
 
 - HTML · CSS · JavaScript
 - GitHub Pages (Hosting)
-- Open Graph & Twitter Card meta support
