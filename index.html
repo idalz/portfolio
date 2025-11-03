@@ -174,19 +174,28 @@
      <button data-filter="dl">Deep Learning</button>
      <button data-filter="ml">Machine Learning </button>
      <button data-filter="data">Data Science &amp; Analytics</button>
+     <button data-filter="live-demo" class="live-demo-filter">Live Demo</button>
     </div>
 
     <!-- AI & LLM -->
 <section class="category slide-up hidden stagger" data-category="ai">
   <div class="text-center"><h2 class="fade-in-heading">AI &amp; LLM</h2></div>
   <div class="project-list centered">
-    <div class="project-card mb-3" data-url="https://github.com/idalz/ai-powered-job-app-assistant">
+    <div class="project-card mb-3" data-url="https://github.com/idalz/ai-powered-job-app-assistant" data-has-demo="true">
       <div class="project-description">
-        <h3>AI-Powered Job Application Assistant</h3>
-        <p>An AI-driven assistant built with Langchain, OpenAI, Pinecone, FastAPI, PostgreSQL and Streamlit. Users can create profiles, extract key details from job descriptions and resumes, evaluate their compatibility with specific jobs, and generate personalized cover letters. Recruiters can find ideal candidates in a single click using the power of RAG.</p>
+        <h3>AI-Powered Job Application Assistant<a href="YOUR_DEMO_URL_HERE" class="demo-badge" target="_blank" onclick="event.stopPropagation()">Live Demo</a></h3>
+        <p>An AI-driven assistant built with Langchain, OpenAI, Pinecone, FastAPI, PostgreSQL and Streamlit. Users can create profiles, extract key details from job descriptions and resumes, evaluate their compatibility with specific jobs, and generate personalized cover letters. Recruiters can find ideal candidates in a single click using vector search.</p>
         <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span><span>FastAPI</span><span>PostgreSQL</span><span>Streamlit</span><span>Docker</span></div>
       </div>
       <div class="project-image"><img alt="AI-Powered Job Application Assistant" src="project-pics/ai-job-app.webp" width="250" height="150" loading="lazy" /></div>
+    </div>
+    <div class="project-card mb-3" data-url="https://github.com/idalz/tokyo-trip-assistant" data-has-demo="true">
+      <div class="project-description">
+        <h3>Tokyo Trip Assistant<a href="YOUR_DEMO_URL_HERE" class="demo-badge" target="_blank" onclick="event.stopPropagation()">Live Demo</a></h3>
+        <p>An AI-powered conversational travel guide built with LangGraph, OpenAI, Pinecone, FastAPI, and Streamlit. Visitors can chat naturally to discover Tokyo's temples, skyline views, dining spots, and entertainment venues. The assistant uses RAG for grounded recommendations and integrates real-time weather forecasts to help plan the perfect trip.</p>
+        <div class="project-tech"><span>LangGraph</span><span>OpenAI</span><span>Pinecone</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span></div>
+      </div>
+      <div class="project-image"><img alt="Tokyo Trip Assistant" src="project-pics/ai-tokyo-trip.webp" width="250" height="150" loading="lazy" /></div>
     </div>
     <div class="project-card mb-3" data-url="https://github.com/idalz/multi-source-rag-app">
       <div class="project-description">
@@ -203,6 +212,14 @@
         <div class="project-tech"><span>FastAPI</span><span>OpenAI</span><span>LangChain</span><span>FAISS</span><span>Docker</span></div>
       </div>
       <div class="project-image"><img alt="AI Chatbot with Memory" src="project-pics/ai-chatbot.webp" width="250" height="150" loading="lazy" /></div>
+    </div>
+    <div class="project-card mb-3" data-url="https://github.com/idalz/tokyo-trip-assistant">
+      <div class="project-description">
+        <h3>Tokyo Trip Assistant<a href="YOUR_DEMO_URL_HERE" class="demo-badge" target="_blank" onclick="event.stopPropagation()">Live Demo</a></h3>
+        <p>An AI-powered conversational travel guide built with LangGraph, OpenAI, Pinecone, FastAPI, and Streamlit. Visitors can chat naturally to discover Tokyo's temples, skyline views, dining spots, and entertainment venues. The assistant uses RAG for grounded recommendations and integrates real-time weather forecasts to help plan the perfect trip.</p>
+        <div class="project-tech"><span>LangGraph</span><span>OpenAI</span><span>Pinecone</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span></div>
+      </div>
+      <div class="project-image"><img alt="Tokyo Trip Assistant" src="project-pics/ai-tokyo-trip.webp" width="250" height="150" loading="lazy" /></div>
     </div>
   </div>
 </section>
@@ -354,6 +371,7 @@
 
       const buttons = document.querySelectorAll('.filters button');
       const categories = document.querySelectorAll('.category');
+      const projectCards = document.querySelectorAll('.project-card');
 
       buttons.forEach(button => {
         button.addEventListener('click', () => {
@@ -362,11 +380,36 @@
           buttons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
 
-          categories.forEach(section => {
-            const match = section.getAttribute('data-category') === filter || filter === 'all';
-            section.style.display = match ? 'block' : 'none';
-            if (match) section.classList.add('fade-in');
-          });
+          if (filter === 'live-demo') {
+            // Show only projects with live demos
+            projectCards.forEach(card => {
+              if (card.getAttribute('data-has-demo') === 'true') {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+
+            // Hide categories that have no visible projects
+            categories.forEach(section => {
+              const visibleCards = section.querySelectorAll('.project-card[data-has-demo="true"]');
+              if (visibleCards.length > 0) {
+                section.style.display = 'block';
+              } else {
+                section.style.display = 'none';
+              }
+            });
+          } else {
+            // Reset all cards to be visible within their categories
+            projectCards.forEach(card => {
+              card.style.display = 'flex';
+            });
+            categories.forEach(section => {
+              const match = section.getAttribute('data-category') === filter || filter === 'all';
+              section.style.display = match ? 'block' : 'none';
+              if (match) section.classList.add('fade-in');
+            });
+          }
         });
       });
 
