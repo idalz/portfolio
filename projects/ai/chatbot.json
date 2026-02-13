@@ -1,0 +1,8 @@
+{
+  "title": "AI Chatbot with Memory",
+  "description": "A full-stack application built with FastAPI, OpenAI, LangChain and FAISS. Each user has a unique session ID, enabling personalized and memory-aware conversations that persist across messages during the session.",
+  "tech": ["FastAPI", "OpenAI", "LangChain", "FAISS", "Docker"],
+  "image": "project-pics/ai-chatbot.webp",
+  "github": "https://github.com/idalz/ai-chatbot-with-memory",
+  "demo": null
+}

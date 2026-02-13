@@ -1,0 +1,8 @@
+{
+  "title": "Job Board App",
+  "description": "A full-stack job board aggregator with FastAPI, PostgreSQL and BeautifulSoup. Users can search dev jobs by tags and keywords (scraped from different sources). Includes token-based access for admin to manage or scrape jobs.",
+  "tech": ["FastAPI", "PostgreSQL", "BeautifulSoup", "Docker"],
+  "image": "project-pics/se-job-board.webp",
+  "github": "https://github.com/idalz/job-board-app",
+  "demo": null
+}

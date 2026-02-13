@@ -1,0 +1,8 @@
+{
+  "title": "Kaggle AI Assistant",
+  "description": "A multi-agent CLI system powered by Google ADK and Gemini 2.5 models. Features specialized agents that work together via A2A protocol: Kaggle Agent (search and download competitions, datasets, notebooks), Data Science Agent (autonomous data analysis and notebook creation), and Code Agent (file management and code explanation). Streamlines the workflow from research to production code.",
+  "tech": ["Google ADK", "Gemini 2.5", "A2A Protocol", "Kaggle MCP", "Rich CLI", "Multi-Agent"],
+  "image": "project-pics/ai-kaggle.webp",
+  "github": "https://github.com/idalz/kaggle-ai",
+  "demo": null
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Task Manager Web App",
+  "description": "A full-stack task manager app with FastAPI, PostgreSQL and JWT-based user authentication. Users can create their account and safely manage their tasks. Includes CRUD operations, task filtering, sorting and searching.",
+  "tech": ["FastAPI", "PostgreSQL", "JWT", "Alembic", "Docker"],
+  "image": "project-pics/se-task-manager.webp",
+  "github": "https://github.com/idalz/task-manager-web-app",
+  "demo": null
+}

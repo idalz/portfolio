@@ -1,0 +1,8 @@
+{
+  "title": "Japan's Hostels Price Prediction",
+  "description": "A Flask-based web app to predict hostel prices in Japan using CatBoost. Users can enter their preferences to find the expected cost of the hostel they'd like to rent.",
+  "tech": ["CatBoost", "Flask", "Docker", "GitHub Actions", "Heroku"],
+  "image": "project-pics/ml-japan-hostel.webp",
+  "github": "https://github.com/idalz/jpn-hostel-price-prediction",
+  "demo": null
+}

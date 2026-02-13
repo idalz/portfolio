@@ -166,147 +166,12 @@
      </h1>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="filters">
-     <button class="active" data-filter="all">All</button>
-     <button data-filter="ai">AI &amp; LLM</button>
-     <button data-filter="software">Software Engineering</button>
-     <button data-filter="dl">Deep Learning</button>
-     <button data-filter="ml">Machine Learning </button>
-     <button data-filter="data">Data Science &amp; Analytics</button>
-     <button data-filter="live-demo" class="live-demo-filter">Live Demo</button>
-    </div>
+    <!-- Filter Buttons (generated dynamically) -->
+    <div class="filters" id="project-filters"></div>
 
-    <!-- AI & LLM -->
-<section class="category slide-up hidden stagger" data-category="ai">
-  <div class="text-center"><h2 class="fade-in-heading">AI &amp; LLM</h2></div>
-  <div class="project-list centered">
-    <div class="project-card mb-3" data-url="https://github.com/idalz/kaggle-ai">
-      <div class="project-description">
-        <h3>Kaggle AI Assistant</h3>
-        <p>A multi-agent CLI system powered by Google ADK and Gemini 2.5 models. Features specialized agents that work together via A2A protocol: Kaggle Agent (search and download competitions, datasets, notebooks), Data Science Agent (autonomous data analysis and notebook creation), and Code Agent (file management and code explanation). Streamlines the workflow from research to production code.</p>
-        <div class="project-tech"><span>Google ADK</span><span>Gemini 2.5</span><span>A2A Protocol</span><span>Kaggle MCP</span><span>Rich CLI</span><span>Multi-Agent</span></div>
-      </div>
-      <div class="project-image"><img alt="Kaggle AI Assistant" src="project-pics/ai-kaggle.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-    <div class="project-card mb-3" data-url="https://github.com/idalz/ai-powered-job-app-assistant" data-has-demo="true">
-      <div class="project-description">
-        <h3>Job Match AI Assistant<a href="https://jobmatch-assistant.up.railway.app/" class="demo-badge" target="_blank" onclick="event.stopPropagation()">Live Demo</a></h3>
-        <p>An AI-driven assistant built with Langchain, OpenAI, Pinecone, FastAPI, PostgreSQL and Streamlit. Users can create profiles, extract key details from job descriptions and resumes, evaluate their compatibility with specific jobs, and generate personalized cover letters. Recruiters can find ideal candidates in a single click using vector search.</p>
-        <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span><span>FastAPI</span><span>PostgreSQL</span><span>Streamlit</span><span>Docker</span></div>
-      </div>
-      <div class="project-image"><img alt="Job Match AI Assistant" src="project-pics/ai-job-app.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-    <div class="project-card mb-3" data-url="https://github.com/idalz/tokyo-trip-assistant" data-has-demo="true">
-      <div class="project-description">
-        <h3>Tokyo Trip AI Assistant<a href="https://tokyo-trip-assistant.up.railway.app/" class="demo-badge" target="_blank" onclick="event.stopPropagation()">Live Demo</a></h3>
-        <p>An AI-powered conversational travel guide built with LangGraph, OpenAI, Pinecone, FastAPI, and Streamlit. Visitors can chat naturally to discover Tokyo's temples, skyline views, dining spots, and entertainment venues. The assistant uses RAG for grounded recommendations and integrates real-time weather forecasts to help plan the perfect trip.</p>
-        <div class="project-tech"><span>LangGraph</span><span>OpenAI</span><span>Pinecone</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span></div>
-      </div>
-      <div class="project-image"><img alt="Tokyo Trip AI Assistant" src="project-pics/ai-tokyo-trip.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-    <div class="project-card mb-3" data-url="https://github.com/idalz/multi-source-rag-app">
-      <div class="project-description">
-        <h3>Multi-Source RAG App</h3>
-        <p>An intelligent question-answering app using LangChain agents with OpenAI, Pinecone, and Streamlit. Users can upload their own documents (PDF) and ask any question. The agent provides an answer based on the document or falls back to Arxiv and Wikipedia.</p>
-        <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span><span>Streamlit</span><span>RAG</span><span>Docker</span></div>
-      </div>
-      <div class="project-image"><img alt="Multi-Source RAG App" src="project-pics/ai-rag-qa.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-    <div class="project-card mb-3" data-url="https://github.com/idalz/ai-chatbot-with-memory">
-      <div class="project-description">
-        <h3>AI Chatbot with Memory</h3>
-        <p>A full-stack application built with FastAPI, OpenAI, LangChain and FAISS. Each user has a unique session ID, enabling personalized and memory-aware conversations that persist across messages during the session.</p>
-        <div class="project-tech"><span>FastAPI</span><span>OpenAI</span><span>LangChain</span><span>FAISS</span><span>Docker</span></div>
-      </div>
-      <div class="project-image"><img alt="AI Chatbot with Memory" src="project-pics/ai-chatbot.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-  </div>
-</section>
-
-    <!-- Software Engineering -->
-<section class="category slide-up hidden stagger-2" data-category="software">
-  <div class="text-center"><h2 class="fade-in-heading">Software Engineering</h2></div>
-  <div class="project-list centered">
-    <div class="project-card mb-3" data-url="https://github.com/idalz/task-manager-web-app">
-      <div class="project-description">
-        <h3>Task Manager Web App</h3>
-        <p>A full-stack task manager app with FastAPI, PostgreSQL and JWT-based user authentication. Users can create their account and safely manage their tasks. Includes CRUD operations, task filtering, sorting and searching.</p>
-        <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>JWT</span><span>Alembic</span><span>Docker</span></div>
-      </div>
-      <div class="project-image"><img alt="Task Manager Web App" src="project-pics/se-task-manager.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-    <div class="project-card mb-3" data-url="https://github.com/idalz/realtime-chat-app">
-      <div class="project-description">
-        <h3>Real-Time Chat App</h3>
-        <p>A real-time chat platform using FastAPI, PostgreSQL, JWT-based user authentication, WebSockets, and Redis for pub/sub messaging. Users can create their account and join public rooms or send DMs to others in real time.</p>
-        <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>JWT</span><span>WebSockets</span><span>Redis</span><span>Alembic</span><span>Docker</span></div>
-      </div>
-      <div class="project-image"><img alt="Real-Time Chat App" src="project-pics/se-chat-app.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-    <div class="project-card mb-3" data-url="https://github.com/idalz/job-board-app">
-      <div class="project-description">
-        <h3>Job Board App</h3>
-        <p>A full-stack job board aggregator with FastAPI, PostgreSQL and BeautifulSoup. Users can search dev jobs by tags and keywords (scraped from different sources). Includes token-based access for admin to manage or scrape jobs.</p>
-        <div class="project-tech"><span>FastAPI</span><span>PostgreSQL</span><span>BeautifulSoup</span><span>Docker</span></div>
-      </div>
-      <div class="project-image"><img alt="Job Board App" src="project-pics/se-job-board.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-  </div>
-</section>
-
-    <!-- Deep Learning -->
-<section class="category slide-up hidden stagger-3" data-category="dl">
-  <div class="text-center"><h2 class="fade-in-heading">Deep Learning</h2></div>
-  <div class="project-list centered">
-    <div class="project-card mb-3" data-url="https://github.com/idalz/car-price-prediction">
-      <div class="project-description">
-        <h3>Car Price Prediction</h3>
-        <p>An end-to-end car price prediction system using a neural network in PyTorch and Flask for the web app. Users can enter features of a car and get a predicted price as output.</p>
-        <div class="project-tech"><span>PyTorch</span><span>Flask</span><span>DVC</span><span>Docker</span><span>GitHub Actions</span><span>AWS</span></div>
-      </div>
-      <div class="project-image"><img alt="Car Price Prediction" src="project-pics/dl-car.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-  </div>
-</section>
-
-    <!-- Machine Learning -->
-<section class="category slide-up hidden" data-category="ml">
-  <div class="text-center"><h2 class="fade-in-heading">Machine Learning</h2></div>
-  <div class="project-list centered">
-    <div class="project-card mb-3" data-url="https://github.com/idalz/mobile-price-classification">
-      <div class="project-description">
-        <h3>Mobile Price Classification</h3>
-        <p>An end-to-end machine learning pipeline to classify mobile phones into price categories using scikit-learn models and FastAPI. Users can enter the specs of a mobile and expect a predicted price category as an output.</p>
-        <div class="project-tech"><span>scikit-learn</span><span>FastAPI</span><span>Docker</span><span>GitHub Actions</span><span>Azure</span></div>
-      </div>
-      <div class="project-image"><img alt="Mobile Price Classification" src="project-pics/ml-mobile.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-    <div class="project-card mb-3" data-url="https://github.com/idalz/jpn-hostel-price-prediction">
-      <div class="project-description">
-        <h3>Japan's Hostels Price Prediction</h3>
-        <p>A Flask-based web app to predict hostel prices in Japan using CatBoost. Users can enter their preferences to find the expected cost of the hostel they'd like to rent.</p>
-        <div class="project-tech"><span>CatBoost</span><span>Flask</span><span>Docker</span><span>GitHub Actions</span><span>Heroku</span></div>
-      </div>
-      <div class="project-image"><img alt="Japan's Hostels Price Prediction" src="project-pics/ml-japan-hostel.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-  </div>
-</section>
-
-   <!-- Data Science & Analytics -->
-<section class="category slide-up hidden" data-category="data">
-  <div class="text-center"><h2 class="fade-in-heading">Data Science &amp; Analytics</h2></div>
-  <div class="project-list centered">
-    <div class="project-card mb-3" data-url="https://github.com/idalz/jupyter-notebooks-collection">
-      <div class="project-description">
-        <h3>Jupyter Notebooks Collection</h3>
-        <p>A collection of data science Jupyter notebooks showcasing various data and model related tasks on different datasets.</p>
-        <div class="project-tech"><span>scikit-learn</span><span>TensorFlow</span><span>PyTorch</span><span>CatBoost</span><span>EDA</span><span>Jupyter</span></div>
-      </div>
-      <div class="project-image"><img alt="Jupyter Notebooks Collection" src="project-pics/dsa-notebooks.webp" width="250" height="150" loading="lazy" /></div>
-    </div>
-  </div>
-</section>
+    <!-- Project Categories (generated dynamically) -->
+    <div id="project-categories"></div>
+   </section>
 
    <!-- Contact Section -->
    <section class="footer zoom-in hidden" id="contact">
@@ -369,49 +234,131 @@
         fadeInObserver.observe(section);
       });
 
-      const buttons = document.querySelectorAll('.filters button');
-      const categories = document.querySelectorAll('.category');
-      const projectCards = document.querySelectorAll('.project-card');
+      // === Dynamic Project Loading ===
+      async function loadProjects() {
+        const config = await fetch('projects/config.json').then(r => r.json());
+        const categoriesContainer = document.getElementById('project-categories');
+        const filtersContainer = document.getElementById('project-filters');
 
-      buttons.forEach(button => {
-        button.addEventListener('click', () => {
-          const filter = button.getAttribute('data-filter');
+        // Build filter buttons
+        let filtersHTML = '<button class="active" data-filter="all">All</button>';
+        config.categories.forEach(cat => {
+          filtersHTML += `<button data-filter="${cat.id}">${cat.name}</button>`;
+        });
+        filtersHTML += '<button data-filter="live-demo" class="live-demo-filter">Live Demo</button>';
+        filtersContainer.innerHTML = filtersHTML;
 
-          buttons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
+        // Load all project data
+        const categoryData = await Promise.all(config.categories.map(async (cat) => {
+          const projects = await Promise.all(cat.projects.map(async (name) => {
+            const res = await fetch(`projects/${cat.folder}/${name}.json`);
+            return res.json();
+          }));
+          return { ...cat, projectData: projects };
+        }));
 
-          if (filter === 'live-demo') {
-            // Show only projects with live demos
-            projectCards.forEach(card => {
-              if (card.getAttribute('data-has-demo') === 'true') {
+        // Build category sections HTML
+        let categoriesHTML = '';
+        categoryData.forEach((cat, i) => {
+          const staggerClass = i === 0 ? 'stagger' : i === 1 ? 'stagger-2' : i === 2 ? 'stagger-3' : '';
+          categoriesHTML += `<section class="category slide-up hidden ${staggerClass}" data-category="${cat.id}">`;
+          categoriesHTML += `<div class="text-center"><h2 class="fade-in-heading">${cat.name}</h2></div>`;
+          categoriesHTML += '<div class="project-list centered">';
+
+          cat.projectData.forEach(project => {
+            const hasDemo = project.demo ? ' data-has-demo="true"' : '';
+            const demoBadge = project.demo
+              ? `<a href="${project.demo}" class="demo-badge" target="_blank" onclick="event.stopPropagation()">Live Demo</a>`
+              : '';
+            const techTags = project.tech.map(t => `<span>${t}</span>`).join('');
+
+            categoriesHTML += `<div class="project-card mb-3" data-url="${project.github}"${hasDemo}>`;
+            categoriesHTML += '<div class="project-description">';
+            categoriesHTML += `<h3>${project.title}${demoBadge}</h3>`;
+            categoriesHTML += `<p>${project.description}</p>`;
+            categoriesHTML += `<div class="project-tech">${techTags}</div>`;
+            categoriesHTML += '</div>';
+            categoriesHTML += `<div class="project-image"><img alt="${project.title}" src="${project.image}" width="250" height="150" loading="lazy" /></div>`;
+            categoriesHTML += '</div>';
+          });
+
+          categoriesHTML += '</div></section>';
+        });
+
+        categoriesContainer.innerHTML = categoriesHTML;
+
+        // Initialize features that depend on rendered projects
+        initProjectFeatures();
+      }
+
+      function initProjectFeatures() {
+        const buttons = document.querySelectorAll('.filters button');
+        const categories = document.querySelectorAll('.category');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        buttons.forEach(button => {
+          button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            if (filter === 'live-demo') {
+              projectCards.forEach(card => {
+                if (card.getAttribute('data-has-demo') === 'true') {
+                  card.style.display = 'flex';
+                } else {
+                  card.style.display = 'none';
+                }
+              });
+
+              categories.forEach(section => {
+                const visibleCards = section.querySelectorAll('.project-card[data-has-demo="true"]');
+                section.style.display = visibleCards.length > 0 ? 'block' : 'none';
+              });
+            } else {
+              projectCards.forEach(card => {
                 card.style.display = 'flex';
-              } else {
-                card.style.display = 'none';
-              }
-            });
+              });
+              categories.forEach(section => {
+                const match = section.getAttribute('data-category') === filter || filter === 'all';
+                section.style.display = match ? 'block' : 'none';
+                if (match) section.classList.add('fade-in');
+              });
+            }
+          });
+        });
 
-            // Hide categories that have no visible projects
-            categories.forEach(section => {
-              const visibleCards = section.querySelectorAll('.project-card[data-has-demo="true"]');
-              if (visibleCards.length > 0) {
-                section.style.display = 'block';
-              } else {
-                section.style.display = 'none';
-              }
-            });
-          } else {
-            // Reset all cards to be visible within their categories
-            projectCards.forEach(card => {
-              card.style.display = 'flex';
-            });
-            categories.forEach(section => {
-              const match = section.getAttribute('data-category') === filter || filter === 'all';
-              section.style.display = match ? 'block' : 'none';
-              if (match) section.classList.add('fade-in');
-            });
+        // Card click handlers
+        projectCards.forEach(card => {
+          card.addEventListener('click', () => {
+            const url = card.getAttribute('data-url');
+            if (url) {
+              window.open(url, '_blank');
+            }
+          });
+        });
+
+        // Observe new elements for scroll animations
+        document.querySelectorAll('.slide-up, .zoom-in').forEach(el => {
+          scrollObserver.observe(el);
+        });
+      }
+
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            scrollObserver.unobserve(entry.target);
           }
         });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in-section, .slide-up, .zoom-in').forEach(el => {
+        scrollObserver.observe(el);
       });
+
+      loadProjects();
 
       function toggleTheme() {
         const isLight = !document.body.classList.contains('light-mode');
@@ -527,32 +474,10 @@
         document.body.classList.add("loaded");
       });
 
-      const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            scrollObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.fade-in-section, .slide-up, .zoom-in').forEach(el => {
-        scrollObserver.observe(el);
-      });
-
       document.querySelector('a[href="#hero"]').addEventListener('click', function(e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-
-      document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const url = card.getAttribute('data-url');
-        if (url) {
-          window.open(url, '_blank');
-        }
-      });
-    });
 
     // === Mobile Nav Functions ===
     let justOpenedNav = false;

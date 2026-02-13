@@ -1,0 +1,8 @@
+{
+  "title": "Jupyter Notebooks Collection",
+  "description": "A collection of data science Jupyter notebooks showcasing various data and model related tasks on different datasets.",
+  "tech": ["scikit-learn", "TensorFlow", "PyTorch", "CatBoost", "EDA", "Jupyter"],
+  "image": "project-pics/dsa-notebooks.webp",
+  "github": "https://github.com/idalz/jupyter-notebooks-collection",
+  "demo": null
+}

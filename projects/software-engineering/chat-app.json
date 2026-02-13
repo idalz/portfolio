@@ -1,0 +1,8 @@
+{
+  "title": "Real-Time Chat App",
+  "description": "A real-time chat platform using FastAPI, PostgreSQL, JWT-based user authentication, WebSockets, and Redis for pub/sub messaging. Users can create their account and join public rooms or send DMs to others in real time.",
+  "tech": ["FastAPI", "PostgreSQL", "JWT", "WebSockets", "Redis", "Alembic", "Docker"],
+  "image": "project-pics/se-chat-app.webp",
+  "github": "https://github.com/idalz/realtime-chat-app",
+  "demo": null
+}

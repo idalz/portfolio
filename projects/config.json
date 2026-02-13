@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": "ai",
+      "name": "AI & LLM",
+      "folder": "ai",
+      "projects": ["kaggle-assistant", "job-match-assistant", "tokyo-trip-assistant", "rag-app", "chatbot"]
+    },
+    {
+      "id": "software",
+      "name": "Software Engineering",
+      "folder": "software-engineering",
+      "projects": ["task-manager", "chat-app", "job-board"]
+    },
+    {
+      "id": "dl",
+      "name": "Deep Learning",
+      "folder": "deep-learning",
+      "projects": ["car-price"]
+    },
+    {
+      "id": "ml",
+      "name": "Machine Learning",
+      "folder": "machine-learning",
+      "projects": ["mobile-price", "japan-hostel"]
+    },
+    {
+      "id": "data",
+      "name": "Data Science & Analytics",
+      "folder": "data-science",
+      "projects": ["notebooks"]
+    }
+  ]
+}

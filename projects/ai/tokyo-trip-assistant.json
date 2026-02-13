@@ -1,0 +1,8 @@
+{
+  "title": "Tokyo Trip AI Assistant",
+  "description": "An AI-powered conversational travel guide built with LangGraph, OpenAI, Pinecone, FastAPI, and Streamlit. Visitors can chat naturally to discover Tokyo's temples, skyline views, dining spots, and entertainment venues. The assistant uses RAG for grounded recommendations and integrates real-time weather forecasts to help plan the perfect trip.",
+  "tech": ["LangGraph", "OpenAI", "Pinecone", "FastAPI", "Streamlit", "Docker"],
+  "image": "project-pics/ai-tokyo-trip.webp",
+  "github": "https://github.com/idalz/tokyo-trip-assistant",
+  "demo": "https://tokyo-trip-assistant.up.railway.app/"
+}

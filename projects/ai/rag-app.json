@@ -1,0 +1,8 @@
+{
+  "title": "Multi-Source RAG App",
+  "description": "An intelligent question-answering app using LangChain agents with OpenAI, Pinecone, and Streamlit. Users can upload their own documents (PDF) and ask any question. The agent provides an answer based on the document or falls back to Arxiv and Wikipedia.",
+  "tech": ["LangChain", "OpenAI", "Pinecone", "Streamlit", "RAG", "Docker"],
+  "image": "project-pics/ai-rag-qa.webp",
+  "github": "https://github.com/idalz/multi-source-rag-app",
+  "demo": null
+}

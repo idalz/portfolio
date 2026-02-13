@@ -1,0 +1,8 @@
+{
+  "title": "Car Price Prediction",
+  "description": "An end-to-end car price prediction system using a neural network in PyTorch and Flask for the web app. Users can enter features of a car and get a predicted price as output.",
+  "tech": ["PyTorch", "Flask", "DVC", "Docker", "GitHub Actions", "AWS"],
+  "image": "project-pics/dl-car.webp",
+  "github": "https://github.com/idalz/car-price-prediction",
+  "demo": null
+}

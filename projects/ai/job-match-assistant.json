@@ -1,0 +1,8 @@
+{
+  "title": "Job Match AI Assistant",
+  "description": "An AI-driven assistant built with Langchain, OpenAI, Pinecone, FastAPI, PostgreSQL and Streamlit. Users can create profiles, extract key details from job descriptions and resumes, evaluate their compatibility with specific jobs, and generate personalized cover letters. Recruiters can find ideal candidates in a single click using vector search.",
+  "tech": ["LangChain", "OpenAI", "Pinecone", "FastAPI", "PostgreSQL", "Streamlit", "Docker"],
+  "image": "project-pics/ai-job-app.webp",
+  "github": "https://github.com/idalz/ai-powered-job-app-assistant",
+  "demo": "https://jobmatch-assistant.up.railway.app/"
+}

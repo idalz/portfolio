@@ -1,0 +1,8 @@
+{
+  "title": "Mobile Price Classification",
+  "description": "An end-to-end machine learning pipeline to classify mobile phones into price categories using scikit-learn models and FastAPI. Users can enter the specs of a mobile and expect a predicted price category as an output.",
+  "tech": ["scikit-learn", "FastAPI", "Docker", "GitHub Actions", "Azure"],
+  "image": "project-pics/ml-mobile.webp",
+  "github": "https://github.com/idalz/mobile-price-classification",
+  "demo": null
+}
